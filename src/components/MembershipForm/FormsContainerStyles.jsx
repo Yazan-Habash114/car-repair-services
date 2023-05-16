@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const FormsContainer = styled.div`
-  margin: 10px;
   position: relative;
   display: flex;
   align-items: center;
