@@ -1,10 +1,10 @@
-import TestTheme from "./components/TestTheme";
 import MyThemeProvider from "./globals/MyThemes";
+import Router from "./routes/Router";
 
 const App = () => {
   return (
     <MyThemeProvider>
-      <TestTheme />
+      <Router />
     </MyThemeProvider>
   );
 };

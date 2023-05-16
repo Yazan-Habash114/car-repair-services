@@ -2,9 +2,9 @@ import { ThemeProvider } from "styled-components";
 
 const MyThemeProvider = ({ children }) => {
   const customColors = {
-    primary: "#2A2A2A",
-    secondary: "#FFC513",
-    background: "#D9D9D9",
+    primary: "#ffc513",
+    secondary: "#2a2a2a",
+    background: "#d9d9d9",
     default: "#fff",
   };
 
