@@ -3,3 +3,9 @@
   font-size: 16px;
   color: #fff;
 }
+
+.capitalized {
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 4rem;
+}

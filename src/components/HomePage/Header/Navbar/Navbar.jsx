@@ -8,6 +8,7 @@ const Container = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0;
+  background-color: ${(props) => props.theme.background};
 `;
 
 const Navbar = () => {
