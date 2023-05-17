@@ -8,7 +8,7 @@ const Button = styled.button`
   font-weight: bold;
   padding: 12px 55px;
   margin: 20px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 2px solid ${(props) => props.theme.default};
   outline: none;
   letter-spacing: 1px;

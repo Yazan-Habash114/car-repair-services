@@ -5,8 +5,7 @@ export const FormsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 768px;
-  max-width: 100%;
+  min-width: 768px;
   min-height: 480px;
   border-radius: 10px;
   background: ${(props) => props.theme.background};
