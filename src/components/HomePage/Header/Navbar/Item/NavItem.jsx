@@ -7,6 +7,11 @@ const Link = styled(NavLink)`
   color: ${(props) => props.theme.text};
   margin: 0 3rem;
   font-weight: 600;
+  transition: 0.3s ease-in;
+
+  &:hover {
+    color: ${(props) => props.theme.primary};
+  }
 `;
 
 const NavItem = ({ link, target }) => {

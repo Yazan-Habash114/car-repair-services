@@ -9,7 +9,7 @@ const SignUpForm = () => {
   return (
     <div className={styles["sign-up"]}>
       <Form action="#">
-        <MainHeading text="Create Account" />
+        <MainHeading size="36px" text="Create Account" />
         <FormInput type="email" placeholder="Email" required />
         <FormInput type="password" placeholder="Password" required />
         <SubmitButton text={"Sign up"} />
