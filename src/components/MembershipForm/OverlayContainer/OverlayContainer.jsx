@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../styles.module.css";
-import OverlayButton from "../Buttons/OverlayButton";
+import OverlayButton from "../../UI/Buttons/OverlayButton";
 import SectionOverlay from "./SectionOverlay/SectionOverlay";
-import MainHeading from "../Headings/MainHeading";
+import MainHeading from "../../UI/Headings/MainHeading";
 
 const OverlayContainer = ({ onChildClick }) => {
   return (

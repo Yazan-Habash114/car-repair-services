@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles.module.css";
-import SubmitButton from "../Buttons/SubmitButton";
-import MainHeading from "../Headings/MainHeading";
+import SubmitButton from "../../UI/Buttons/SubmitButton";
+import MainHeading from "../../UI/Headings/MainHeading";
 import Form from "../Form/Form";
 import FormInput from "../Input/FormInput";
 

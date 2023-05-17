@@ -6,6 +6,7 @@ const MyThemeProvider = ({ children }) => {
     secondary: "#2a2a2a",
     background: "#d9d9d9",
     default: "#fff",
+    text: "#000",
   };
 
   return <ThemeProvider theme={customColors}>{children}</ThemeProvider>;

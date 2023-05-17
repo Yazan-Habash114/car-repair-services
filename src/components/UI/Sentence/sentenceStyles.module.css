@@ -1,0 +1,17 @@
+.regular-text-white {
+  font-weight: 300;
+  font-size: 16px;
+  color: #fff;
+}
+
+.section-par {
+  font-weight: 300;
+  font-size: 20px;
+  color: black;
+}
+
+.capitalized {
+  text-transform: uppercase;
+  color: #fff;
+  margin-top: 4rem;
+}
