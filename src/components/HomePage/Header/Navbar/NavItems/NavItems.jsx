@@ -5,7 +5,6 @@ import NavItem from "../Item/NavItem";
 const Items = styled.ul`
   display: flex;
   justify-content: space-between;
-  border: 2px solid red;
 `;
 
 const NavItems = () => {
