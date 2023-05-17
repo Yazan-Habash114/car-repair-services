@@ -1,7 +1,7 @@
 import React from "react";
 
-const Logo = () => {
-  return <div>Logo here</div>;
+const Logo = ({ source }) => {
+  return <img src={source} alt="Logo Here" />;
 };
 
 export default Logo;

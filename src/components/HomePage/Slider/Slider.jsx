@@ -4,11 +4,16 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Slide from "./Slide/Slide";
 
 const Slider = () => {
+  const imagesSources = [
+    "/images/slider-img-1.jpg",
+    "/images/slider-img-2.jpg",
+    "/images/slider-img-3.jpg",
+  ];
   return (
     <Carousel autoPlay infiniteLoop>
-      <Slide background="/images/slider-img-1.jpg" />
-      <Slide background="/images/slider-img-2.jpg" />
-      <Slide background="/images/slider-img-3.jpg" />
+      {imagesSources.map((imgSrc) => (
+        <Slide background={imgSrc} />
+      ))}
     </Carousel>
   );
 };

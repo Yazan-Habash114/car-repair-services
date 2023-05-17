@@ -8,11 +8,26 @@ const Items = styled.ul`
 `;
 
 const NavItems = () => {
+  const navLinks = [
+    {
+      linkName: "Home",
+      linkTarget: "/",
+    },
+    {
+      linkName: "About",
+      linkTarget: "/",
+    },
+    {
+      linkName: "Map",
+      linkTarget: "/",
+    },
+  ];
+
   return (
     <Items>
-      <NavItem link="Home" target={"/"} />
-      <NavItem link="About" target={"/"} />
-      <NavItem link="Map" target={"/"} />
+      {navLinks.map((navLink) => (
+        <NavItem link={navLink.linkName} target={navLink.linkTarget} />
+      ))}
     </Items>
   );
 };
