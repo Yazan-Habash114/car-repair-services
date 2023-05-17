@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "../styles.module.css";
-import SubmitButton from "../Buttons/SubmitButton";
+import SubmitButton from "../../UI/Buttons/SubmitButton";
 import FormInput from "../Input/FormInput";
 import Form from "../Form/Form";
-import MainHeading from "../Headings/MainHeading";
+import MainHeading from "../../UI/Headings/MainHeading";
 
 const SignUpForm = () => {
   return (
