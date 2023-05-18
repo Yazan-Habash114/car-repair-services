@@ -8,6 +8,7 @@ const Container = styled.div`
   background-image: ${(props) => `url(${props.background})`};
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 800px;
   background-color: black;
   display: flex;
