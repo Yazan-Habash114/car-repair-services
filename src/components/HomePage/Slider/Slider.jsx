@@ -5,9 +5,9 @@ import Slide from "./Slide/Slide";
 
 const Slider = () => {
   const imagesSources = [
-    "/images/slider-img-1.jpg",
-    "/images/slider-img-2.jpg",
-    "/images/slider-img-3.jpg",
+    "/images/Slider/slider-img-1.jpg",
+    "/images/Slider/slider-img-2.jpg",
+    "/images/Slider/slider-img-3.jpg",
   ];
   return (
     <Carousel autoPlay infiniteLoop>

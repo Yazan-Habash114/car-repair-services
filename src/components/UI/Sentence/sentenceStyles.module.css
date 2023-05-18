@@ -4,6 +4,17 @@
   color: #fff;
 }
 
+.regular-text-black,
+.catalog-par {
+  font-weight: 300;
+  font-size: 16px;
+  color: black;
+}
+
+.catalog-par {
+  margin-top: 1.5rem;
+}
+
 .section-par {
   font-weight: 300;
   font-size: 20px;
