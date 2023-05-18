@@ -9,6 +9,7 @@ const Content = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 200px;
 `;
 
 const WhatWeDo = () => {
