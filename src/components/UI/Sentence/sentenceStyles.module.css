@@ -21,6 +21,12 @@
   color: black;
 }
 
+.section-par-white {
+  font-weight: 300;
+  font-size: 20px;
+  color: white;
+}
+
 .capitalized {
   text-transform: uppercase;
   color: #fff;

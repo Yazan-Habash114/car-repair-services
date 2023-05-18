@@ -6,7 +6,7 @@ import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
 import Sentence from "../../UI/Sentence/Sentence";
 import RegularButton from "../../UI/Buttons/RegularButton";
 import ServicesList from "./List/ServicesList";
-import { servicesData1, servicesData2 } from "./data";
+import { servicesData } from "./data";
 import DarkLayer from "./DarkLayer/DarkLayer";
 
 const Container = styled.section`
@@ -47,10 +47,10 @@ const RepairServices = () => {
               />
             </Column>
             <Column>
-              <ServicesList data={servicesData1} />
+              <ServicesList data={servicesData.dataSet1} />
             </Column>
             <Column>
-              <ServicesList data={servicesData2} />
+              <ServicesList data={servicesData.dataSet2} />
             </Column>
           </Content>
         </AlignedContainer>
