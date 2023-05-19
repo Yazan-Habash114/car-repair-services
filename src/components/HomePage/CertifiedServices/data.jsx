@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSackDollar } from "@fortawesome/free-solid-svg-icons";
-import { faListCheck } from "@fortawesome/free-solid-svg-icons";
-import { faPercent } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSackDollar,
+  faListCheck,
+  faPercent,
+} from "@fortawesome/free-solid-svg-icons";
 import IconWrapper from "./IconWrapper/IconWrapper";
 
 export const guaranteeServices = [
