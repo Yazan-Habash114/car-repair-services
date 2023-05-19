@@ -9,7 +9,7 @@ const HeroSlider = () => {
     "/images/Slider/slider-img-3.jpg",
   ];
   return (
-    <Slider>
+    <Slider autoPlay={true} infiniteLoop={true} interval={3000}>
       {imagesSources.map((imgSrc) => (
         <Slide key={imgSrc} background={imgSrc} />
       ))}
