@@ -12,6 +12,7 @@ const Container = styled.section`
   padding: 70px 0;
   background-image: url("/images/HowItWorks/HowItWorks.png");
   background-size: cover;
+  background-attachment: fixed;
 `;
 
 const HowItWorks = () => {

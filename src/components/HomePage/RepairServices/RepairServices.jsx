@@ -15,6 +15,7 @@ const Container = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 `;
 
 const Content = styled.div`
