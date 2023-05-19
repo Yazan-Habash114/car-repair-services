@@ -5,6 +5,7 @@ import RepairServices from "../components/HomePage/RepairServices/RepairServices
 import HowItWorks from "../components/HomePage/HowItWorks/HowItWorks";
 import CertifiedServices from "../components/HomePage/CertifiedServices/CertifiedServices";
 import AvatarCarousel from "../components/HomePage/AvatarCarousel/AvatarCarousel";
+import Statistics from "../components/HomePage/Statistics/Statistics";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <CertifiedServices />
       <HowItWorks />
       <AvatarCarousel />
+      <Statistics />
     </>
   );
 };
