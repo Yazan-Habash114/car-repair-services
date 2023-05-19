@@ -10,9 +10,9 @@ const Slider = () => {
     "/images/Slider/slider-img-3.jpg",
   ];
   return (
-    <Carousel autoPlay infiniteLoop>
+    <Carousel autoPlay infiniteLoop showThumbs={false}>
       {imagesSources.map((imgSrc) => (
-        <Slide background={imgSrc} />
+        <Slide key={imgSrc} background={imgSrc} />
       ))}
     </Carousel>
   );

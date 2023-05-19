@@ -10,7 +10,7 @@ const ServicesList = ({ data }) => {
   return (
     <Container>
       {data.map((row) => (
-        <ListItem text={row} />
+        <ListItem key={row} text={row} />
       ))}
     </Container>
   );

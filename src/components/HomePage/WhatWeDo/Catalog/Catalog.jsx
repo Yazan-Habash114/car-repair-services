@@ -48,7 +48,7 @@ const Catalog = () => {
     <Container>
       {cards.map((card) => {
         return (
-          <CatalogItem background={card.background}>
+          <CatalogItem key={card.title1} background={card.background}>
             <SecondaryHeading text={card.title1} theme={card.color} />
             <SecondaryHeading text={card.title2} theme={card.color} />
             <Sentence classStyle="catalog-par" text={card.p1} />
@@ -58,7 +58,7 @@ const Catalog = () => {
       })}
 
       {imagesSource.map((src) => (
-        <CatalogItem source={src} />
+        <CatalogItem key={src} source={src} />
       ))}
     </Container>
   );

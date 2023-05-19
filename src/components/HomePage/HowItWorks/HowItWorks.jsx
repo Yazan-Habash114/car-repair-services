@@ -2,7 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import MainHeading from "../../UI/Headings/MainHeading";
 import Sentence from "../../UI/Sentence/Sentence";
-import Cards from "./Cards/Cards";
+import Steps from "./Steps/Steps";
 
 const Container = styled.section`
   margin-top: 200px;
@@ -23,7 +23,7 @@ const HowItWorks = () => {
         classStyle="section-par-white"
         text="These few steps will help you understand how our services works"
       />
-      <Cards />
+      <Steps />
     </Container>
   );
 };

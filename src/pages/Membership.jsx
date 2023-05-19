@@ -8,7 +8,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("/images/slider-img-1.jpg");
+  background-image: url("/images/Slider/slider-img-1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 `;
