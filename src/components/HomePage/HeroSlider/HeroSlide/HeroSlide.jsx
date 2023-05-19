@@ -17,7 +17,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Slide = ({ background }) => {
+const HeroSlide = ({ background }) => {
   const theme = useTheme();
   return (
     <Container background={background}>
@@ -32,4 +32,4 @@ const Slide = ({ background }) => {
   );
 };
 
-export default Slide;
+export default HeroSlide;

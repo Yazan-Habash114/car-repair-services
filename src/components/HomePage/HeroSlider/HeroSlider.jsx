@@ -1,21 +1,20 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Slide from "./Slide/Slide";
+import Slider from "../../UI/Slider/Slider";
+import Slide from "./HeroSlide/HeroSlide";
 
-const Slider = () => {
+const HeroSlider = () => {
   const imagesSources = [
     "/images/Slider/slider-img-1.jpg",
     "/images/Slider/slider-img-2.jpg",
     "/images/Slider/slider-img-3.jpg",
   ];
   return (
-    <Carousel autoPlay infiniteLoop showThumbs={false}>
+    <Slider>
       {imagesSources.map((imgSrc) => (
         <Slide key={imgSrc} background={imgSrc} />
       ))}
-    </Carousel>
+    </Slider>
   );
 };
 
-export default Slider;
+export default HeroSlider;
