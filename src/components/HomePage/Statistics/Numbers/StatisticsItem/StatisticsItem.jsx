@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import SecondaryHeading from "../../../../UI/Headings/SecondaryHeading";
+import TernaryHeading from "../../../../UI/Headings/TernaryHeading";
 import Sentence from "../../../../UI/Sentence/Sentence";
 
 const Item = styled.div`
@@ -20,7 +20,7 @@ const StatisticsItem = ({ mainText, secondaryText }) => {
   const myTheme = useTheme();
   return (
     <Item>
-      <SecondaryHeading text={mainText} theme={myTheme.primary} />
+      <TernaryHeading text={mainText} theme={myTheme.primary} fontSize="24px" />
       <Separator />
       <Sentence text={secondaryText} />
     </Item>

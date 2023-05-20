@@ -4,7 +4,7 @@ import AlignedContainer from "../../UI/AlignedContainer/AlignedContainer";
 import GuaranteeService from "./GuaranteeService/GuaranteeService";
 import { guaranteeServices } from "./data";
 import Sentence from "../../UI/Sentence/Sentence";
-import MainHeading from "../../UI/Headings/MainHeading";
+import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
 
 const Container = styled.section`
   margin-top: 200px;
@@ -26,10 +26,14 @@ const CertifiedServices = () => {
   return (
     <AlignedContainer>
       <Container>
-        <MainHeading text="Why Choose Certified Service?" />
+        <SecondaryHeading
+          text="Why Choose Certified Service?"
+          fontSize="48px"
+        />
         <Sentence
-          classStyle="section-par"
           text="These few steps will help you understand how our services works"
+          fontWeight={300}
+          fontSize="24px"
         />
         <ServiceDiv>
           {guaranteeServices.map((service) => (

@@ -2,13 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 const Heading = styled.h3`
-  color: ${(props) => props.color};
-  font-weight: 600;
-  margin: 2rem 0;
+  color: ${(props) => props.myStyle.theme || "black"};
+  font-weight: ${(props) => props.myStyle.fontWeight || 600};
+  margin: ${(props) => props.myStyle.margin || "0"};
+  font-size: ${(props) => props.myStyle.fontSize};
 `;
 
-const TernaryHeading = ({ text, theme }) => {
-  return <Heading color={theme}>{text}</Heading>;
+const TernaryHeading = ({ text, theme, fontWeight, fontSize, margin }) => {
+  const myStyle = {
+    theme: theme,
+    fontWeight: fontWeight,
+    fontSize: fontSize,
+    margin: margin,
+  };
+  return <Heading myStyle={myStyle}>{text}</Heading>;
 };
 
 export default TernaryHeading;

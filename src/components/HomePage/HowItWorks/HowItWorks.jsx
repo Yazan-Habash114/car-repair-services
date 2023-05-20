@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import MainHeading from "../../UI/Headings/MainHeading";
+import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
 import Sentence from "../../UI/Sentence/Sentence";
 import Steps from "./Steps/Steps";
 
@@ -19,10 +19,16 @@ const HowItWorks = () => {
   const myTheme = useTheme();
   return (
     <Container>
-      <MainHeading text="How It Works" theme={myTheme.primary} />
+      <SecondaryHeading
+        text="How It Works"
+        theme={myTheme.primary}
+        fontSize="48px"
+      />
       <Sentence
-        classStyle="section-par-white"
         text="These few steps will help you understand how our services works"
+        fontWeight={300}
+        theme={myTheme.default}
+        fontSize="24px"
       />
       <Steps />
     </Container>

@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import Card from "../../../UI/Card/Card";
-import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
+import TernaryHeading from "../../../UI/Headings/TernaryHeading";
 import Sentence from "../../../UI/Sentence/Sentence";
 
 const Container = styled.div`
-  /* margin: 2rem 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,8 +22,8 @@ const GuaranteeService = ({ icon, title, explanation }) => {
     <Card>
       <Container>
         {icon}
-        <SecondaryHeading text={title} />
-        <Sentence text={explanation} classStyle="paragraph" />
+        <TernaryHeading text={title} margin="1.5rem 0 0.8rem 0" />
+        <Sentence text={explanation} />
       </Container>
     </Card>
   );

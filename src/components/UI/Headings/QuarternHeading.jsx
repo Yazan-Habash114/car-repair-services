@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Heading = styled.h2`
+const Heading = styled.h4`
   color: ${(props) => props.myStyle.theme};
   font-weight: ${(props) => props.myStyle.fontWeight || 600};
   margin: ${(props) => props.myStyle.margin || "0"};
   font-size: ${(props) => props.myStyle.fontSize};
 `;
 
-const SecondaryHeading = ({ text, theme, fontWeight, fontSize, margin }) => {
+const QuarternHeading = ({ text, theme, fontWeight, fontSize, margin }) => {
   const myStyle = {
     theme: theme,
     fontWeight: fontWeight,
@@ -18,4 +18,4 @@ const SecondaryHeading = ({ text, theme, fontWeight, fontSize, margin }) => {
   return <Heading myStyle={myStyle}>{text}</Heading>;
 };
 
-export default SecondaryHeading;
+export default QuarternHeading;
