@@ -6,6 +6,7 @@ import HowItWorks from "../components/HomePage/HowItWorks/HowItWorks";
 import CertifiedServices from "../components/HomePage/CertifiedServices/CertifiedServices";
 import AvatarCarousel from "../components/HomePage/AvatarCarousel/AvatarCarousel";
 import Statistics from "../components/HomePage/Statistics/Statistics";
+import Footer from "../components/UI/Footer/Footer";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <HowItWorks />
       <AvatarCarousel />
       <Statistics />
+      <Footer />
     </>
   );
 };
