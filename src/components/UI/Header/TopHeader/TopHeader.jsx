@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
 import Logo from "../Logo/Logo";
-import Sentence from "../../../UI/Sentence/Sentence";
+import Sentence from "../../Sentence/Sentence";
 
 const Container = styled.div`
   display: flex;

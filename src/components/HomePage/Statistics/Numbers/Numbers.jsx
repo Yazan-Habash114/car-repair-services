@@ -14,8 +14,12 @@ const Container = styled.div`
 const Numbers = () => {
   return (
     <Container>
-      {statistics.map(({ mainText, secondaryText }) => (
-        <StatisticsItem mainText={mainText} secondaryText={secondaryText} />
+      {statistics.map(({ mainText, secondaryText }, index) => (
+        <StatisticsItem
+          key={index}
+          mainText={mainText}
+          secondaryText={secondaryText}
+        />
       ))}
     </Container>
   );

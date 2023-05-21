@@ -7,7 +7,7 @@ import Sentence from "../../UI/Sentence/Sentence";
 import RegularButton from "../../UI/Buttons/RegularButton";
 import ServicesList from "./List/ServicesList";
 import { servicesData } from "./data";
-import DarkLayer from "./DarkLayer/DarkLayer";
+import DarkLayer from "../../UI/DarkLayer/DarkLayer";
 
 const Container = styled.section`
   margin-top: 200px;
