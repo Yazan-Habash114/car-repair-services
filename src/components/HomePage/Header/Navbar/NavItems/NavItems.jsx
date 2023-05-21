@@ -19,7 +19,7 @@ const NavItems = () => {
     },
     {
       linkName: "Map",
-      linkTarget: "/",
+      linkTarget: "/map",
     },
   ];
 
