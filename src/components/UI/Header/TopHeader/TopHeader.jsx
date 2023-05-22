@@ -1,7 +1,7 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import Logo from "../Logo/Logo";
-import Sentence from "../../../UI/Sentence/Sentence";
+import Sentence from "../../Sentence/Sentence";
 
 const Container = styled.div`
   display: flex;
@@ -12,12 +12,14 @@ const Container = styled.div`
 `;
 
 const TopHeader = () => {
+  const myTheme = useTheme();
   return (
     <Container>
       <Logo />
       <Sentence
         text="Schedule your appointment"
-        classStyle="regular-text-white"
+        fontWeight={300}
+        theme={myTheme.default}
       />
     </Container>
   );

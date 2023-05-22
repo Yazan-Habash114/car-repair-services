@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CatalogItem from "./Item/CatalogItem";
-import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
+import TernaryHeading from "../../../UI/Headings/TernaryHeading";
 import Sentence from "../../../UI/Sentence/Sentence";
 
 const Container = styled.div`
@@ -48,17 +48,25 @@ const Catalog = () => {
     <Container>
       {cards.map((card) => {
         return (
-          <CatalogItem background={card.background}>
-            <SecondaryHeading text={card.title1} theme={card.color} />
-            <SecondaryHeading text={card.title2} theme={card.color} />
-            <Sentence classStyle="catalog-par" text={card.p1} />
-            <Sentence classStyle="regular-text-black" text={card.p2} />
+          <CatalogItem key={card.title1} background={card.background}>
+            <TernaryHeading
+              text={card.title1}
+              theme={card.color}
+              fontSize="24px"
+            />
+            <TernaryHeading
+              text={card.title2}
+              theme={card.color}
+              fontSize="24px"
+            />
+            <Sentence text={card.p1} margin="1.5rem 0 0 0" />
+            <Sentence text={card.p2} fontWeight={300} />
           </CatalogItem>
         );
       })}
 
       {imagesSource.map((src) => (
-        <CatalogItem source={src} />
+        <CatalogItem key={src} source={src} />
       ))}
     </Container>
   );

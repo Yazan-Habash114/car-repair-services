@@ -2,12 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 const Heading = styled.h2`
-  color: ${(props) => props.color};
-  font-weight: 600;
+  color: ${(props) => props.myStyle.theme};
+  font-weight: ${(props) => props.myStyle.fontWeight || 600};
+  margin: ${(props) => props.myStyle.margin || "0"};
+  font-size: ${(props) => props.myStyle.fontSize};
 `;
 
-const SecondaryHeading = ({ text, theme }) => {
-  return <Heading color={theme}>{text}</Heading>;
+const SecondaryHeading = ({ text, theme, fontWeight, fontSize, margin }) => {
+  const myStyle = {
+    theme: theme,
+    fontWeight: fontWeight,
+    fontSize: fontSize,
+    margin: margin,
+  };
+  return <Heading myStyle={myStyle}>{text}</Heading>;
 };
 
 export default SecondaryHeading;

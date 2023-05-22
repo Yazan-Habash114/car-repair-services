@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
-import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
-import EmphasizedHeading from "../../../UI/Headings/EmphasizedHeading";
+import TernaryHeading from "../../../UI/Headings/TernaryHeading";
+import MainHeading from "../../../UI/Headings/MainHeading";
 import Sentence from "../../../UI/Sentence/Sentence";
 
 const Container = styled.div`
@@ -17,19 +17,24 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Slide = ({ background }) => {
-  const theme = useTheme();
+const HeroSlide = ({ background }) => {
+  const myTheme = useTheme();
   return (
     <Container background={background}>
-      <SecondaryHeading text="Trust Your Vehicle to" theme={theme.default} />
-      <EmphasizedHeading text="Certified" theme={theme.primary} />
-      <EmphasizedHeading text="Techniques" theme={theme.primary} />
+      <TernaryHeading
+        text="Trust Your Vehicle to"
+        theme={myTheme.default}
+        fontSize="24px"
+      />
+      <MainHeading text="Certified" theme={myTheme.primary} fontSize="80px" />
+      <MainHeading text="Techniques" theme={myTheme.primary} fontSize="80px" />
       <Sentence
-        classStyle="capitalized"
         text="Service, Maintenance & Repair by the certified service experts"
+        theme={myTheme.default}
+        margin="4rem 0 0 0"
       />
     </Container>
   );
 };
 
-export default Slide;
+export default HeroSlide;

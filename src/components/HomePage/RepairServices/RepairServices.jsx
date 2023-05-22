@@ -2,12 +2,12 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import AlignedContainer from "../../UI/AlignedContainer/AlignedContainer";
 import Column from "./Column/Column";
-import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
+import TernaryHeading from "../../UI/Headings/TernaryHeading";
 import Sentence from "../../UI/Sentence/Sentence";
 import RegularButton from "../../UI/Buttons/RegularButton";
 import ServicesList from "./List/ServicesList";
-import { servicesData1, servicesData2 } from "./data";
-import DarkLayer from "./DarkLayer/DarkLayer";
+import { servicesData } from "./data";
+import DarkLayer from "../../UI/DarkLayer/DarkLayer";
 
 const Container = styled.section`
   margin-top: 200px;
@@ -15,6 +15,7 @@ const Container = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 `;
 
 const Content = styled.div`
@@ -30,14 +31,20 @@ const RepairServices = () => {
         <AlignedContainer>
           <Content>
             <Column>
-              <SecondaryHeading
+              <TernaryHeading
                 text="Repair Services"
                 theme={myTheme.default}
+                fontSize="32px"
               />
-              <SecondaryHeading text="That We Offer" theme={myTheme.primary} />
+              <TernaryHeading
+                text="That We Offer"
+                theme={myTheme.primary}
+                fontSize="32px"
+              />
               <Sentence
                 text="We provide a full range of front end mechanical repairs for all makes and models of cars, no matter the cause. This includes everything from struts, shocks, and tie rod ends to ball joints, springs, and basically everything that is included in repairing the front end of the vehicle."
-                classStyle="paragraph-white"
+                margin="1rem 0 0 0"
+                theme={myTheme.default}
               />
               <RegularButton
                 text="Book an Appointment"
@@ -47,10 +54,10 @@ const RepairServices = () => {
               />
             </Column>
             <Column>
-              <ServicesList data={servicesData1} />
+              <ServicesList data={servicesData.dataSet1} />
             </Column>
             <Column>
-              <ServicesList data={servicesData2} />
+              <ServicesList data={servicesData.dataSet2} />
             </Column>
           </Content>
         </AlignedContainer>

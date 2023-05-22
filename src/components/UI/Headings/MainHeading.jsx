@@ -2,18 +2,20 @@ import React from "react";
 import styled from "styled-components";
 
 const Heading = styled.h1`
-  font-weight: bold;
-  margin: 0;
-  color: ${(props) => (props.color ? props.color : "black")};
-  font-size: ${(props) => (props.size ? props.size : "44px")};
+  color: ${(props) => props.myStyle.theme};
+  font-weight: ${(props) => props.myStyle.fontWeight || 600};
+  margin: ${(props) => props.myStyle.margin || "0"};
+  font-size: ${(props) => props.myStyle.fontSize};
 `;
 
-const MainHeading = ({ text, theme, size }) => {
-  return (
-    <Heading color={theme} size={size}>
-      {text}
-    </Heading>
-  );
+const MainHeading = ({ text, theme, fontWeight, fontSize, margin }) => {
+  const myStyle = {
+    theme: theme,
+    fontWeight: fontWeight,
+    fontSize: fontSize,
+    margin: margin,
+  };
+  return <Heading myStyle={myStyle}>{text}</Heading>;
 };
 
 export default MainHeading;

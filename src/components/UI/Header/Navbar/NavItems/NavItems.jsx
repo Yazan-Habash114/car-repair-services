@@ -19,14 +19,18 @@ const NavItems = () => {
     },
     {
       linkName: "Map",
-      linkTarget: "/",
+      linkTarget: "/map",
     },
   ];
 
   return (
     <Items>
       {navLinks.map((navLink) => (
-        <NavItem link={navLink.linkName} target={navLink.linkTarget} />
+        <NavItem
+          key={navLink.linkName}
+          link={navLink.linkName}
+          target={navLink.linkTarget}
+        />
       ))}
     </Items>
   );
