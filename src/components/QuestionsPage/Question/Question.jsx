@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import Sentence from "../../UI/Sentence/Sentence";
 import Choices from "./Choices/Choices";
 import RegularButton from "../../UI/Buttons/RegularButton";
@@ -18,9 +18,6 @@ const Container = styled.div`
 `;
 
 const Question = () => {
-  const myTheme = useTheme();
-
-  // States
   const [finish, setFinish] = useState(false);
   const [nextId, setNextId] = useState(0);
   const [assertions, setAssertions] = useState([]);
@@ -33,7 +30,6 @@ const Question = () => {
   const [problem, setProblem] = useState("all");
 
   useEffect(() => {
-    // Get KB
     axiosInstance.get("/gatAllKB/").then((response) => {
       let temp = [];
       response.data.map((row) => {
@@ -66,7 +62,7 @@ const Question = () => {
   }, []);
 
   const matching = () => {
-    setCarType(assertions[1].value); // From first assertion
+    setCarType(assertions[1].value);
     let response = forwardChain(KB, assertions);
     for (let i = 0; i < response.inferences.length; i += 1) {
       console.log(response.inferences[i]);
@@ -86,7 +82,7 @@ const Question = () => {
     }
   }, [finish]);
 
-  const handleChoiceClick = (choice) => {
+  const handleNextChoice = (choice) => {
     let assertionsCopy = [...assertions];
     assertionsCopy.push({
       attribute: decisionTree[nextId].questionAttribute,
@@ -104,18 +100,6 @@ const Question = () => {
 
   return (
     <Container>
-      {/* <Sentence text="Question text" fontSize="24px" />
-      <Choices />
-      <RegularButton
-        text="Back"
-        theme={myTheme.secondary}
-        margin="1rem 0.5rem"
-      />
-      <RegularButton
-        text="Next"
-        background={myTheme.primary}
-        margin="1rem 0.5rem"
-      /> */}
       {finish && (
         <div>
           <Sentence
@@ -142,19 +126,16 @@ const Question = () => {
         </div>
       )}
 
-      {/* User Interface */}
-      {decisionTree.length != 0 && nextId > -1 && !finish ? (
-        <div>
+      {decisionTree.length != 0 && nextId > -1 && !finish && (
+        <>
           <Sentence text={decisionTree[nextId].questionText} fontSize="24px" />
-          {decisionTree[nextId].choices.map((choice, index) => {
-            return (
-              <button key={index} onClick={() => handleChoiceClick(choice)}>
-                {choice.choiceText}
-              </button>
-            );
-          })}
-        </div>
-      ) : null}
+          <Choices
+            decisionTree={decisionTree}
+            nextId={nextId}
+            handleNextChoice={handleNextChoice}
+          />
+        </>
+      )}
     </Container>
   );
 };

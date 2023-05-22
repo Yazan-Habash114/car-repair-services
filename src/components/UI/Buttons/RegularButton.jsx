@@ -24,13 +24,21 @@ const Button = styled.button`
   }
 `;
 
-const RegularButton = ({ text, theme, borderColor, background, margin }) => {
+const RegularButton = ({
+  text,
+  theme,
+  borderColor,
+  background,
+  margin,
+  onClickHandler,
+}) => {
   return (
     <Button
       theme={theme}
       borderColor={borderColor}
       background={background}
       margin={margin}
+      onClick={onClickHandler}
     >
       {text}
     </Button>

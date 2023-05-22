@@ -12,9 +12,10 @@ const Item = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
-  width: 600px;
+  width: 300px;
   color: ${(props) =>
     props.isSelected ? props.theme.black : props.theme.default};
+  word-wrap: normal;
 
   &:active {
     transform: scale(0.9);

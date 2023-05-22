@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import ChoiceItem from "./ChoiceItem/ChoiceItem";
+import ButtonsWrapper from "./ButtonsWrapper/ButtonsWrapper";
 
 const Box = styled.div`
   display: flex;
@@ -8,23 +9,36 @@ const Box = styled.div`
   align-items: center;
 `;
 
-const Choices = () => {
+const Choices = ({ decisionTree, nextId, handleNextChoice }) => {
   const [selected, setSelected] = useState(null);
-  const choices = ["Choice 1", "Choice 2", "Choice 3"];
+  const [selectedChoice, setSelectedChoice] = useState(null);
 
-  const handleSelect = (index) => setSelected(index);
+  const handleSelect = (index, choice) => {
+    setSelected(index);
+    setSelectedChoice(choice);
+  };
 
   return (
     <Box>
-      {choices.map((choice, index) => (
-        <ChoiceItem
-          key={index}
-          id={index}
-          text={choice}
-          selected={selected}
-          onSelectChoice={(index) => handleSelect(index)}
-        />
-      ))}
+      {decisionTree[nextId].choices.map((choice, index) => {
+        return (
+          <ChoiceItem
+            key={index}
+            id={index}
+            text={choice.choiceText}
+            selected={selected}
+            onSelectChoice={(index) => handleSelect(index, choice)}
+          />
+        );
+      })}
+
+      <ButtonsWrapper
+        onNextClick={() => {
+          handleNextChoice(selectedChoice);
+          setSelected(-1);
+          setSelectedChoice(null);
+        }}
+      />
     </Box>
   );
 };
