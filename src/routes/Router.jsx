@@ -4,6 +4,7 @@ import Membership from "../pages/Membership";
 import MapPage from "../pages/MapPage";
 import QuestionsPage from "../pages/QuestionsPage";
 import NotFound from "../pages/NotFound";
+import GaragePage from "../pages/GaragePage";
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
         <Route path="/membership" element={<Membership />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/questions" element={<QuestionsPage />} />
+        <Route path="/garage/:id" element={<GaragePage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
