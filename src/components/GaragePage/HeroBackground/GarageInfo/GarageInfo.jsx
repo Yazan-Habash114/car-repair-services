@@ -10,6 +10,7 @@ const Container = styled.div`
   justify-content: space-around;
   padding: 3rem;
 `;
+
 const GarageInfo = () => {
   return (
     <Container>

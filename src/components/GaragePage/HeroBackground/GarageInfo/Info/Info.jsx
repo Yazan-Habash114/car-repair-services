@@ -7,20 +7,34 @@ import Sentence from "../../../../UI/Sentence/Sentence";
 const Container = styled.div`
   background-color: ${(props) => props.theme.secondary};
   color: ${(props) => props.theme.background};
-  width: 400px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 1rem 2rem;
 `;
 
 const Details = styled.div`
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const Row = styled.div`
   display: flex;
-  margin-top: 5px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  flex-wrap: wrap;
+  background-color: ${(props) => props.theme.primary};
+  padding: 10px 5px;
+  color: ${(props) => props.theme.secondary};
+  margin: 5px;
+  text-align: center;
+  border-radius: 5px;
 `;
 
 const Info = () => {
