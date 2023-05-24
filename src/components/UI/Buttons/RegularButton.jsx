@@ -8,7 +8,7 @@ const Button = styled.button`
   font-weight: bold;
   padding: 12px 35px;
   border-radius: 3px;
-  margin: 1rem 0;
+  margin: ${(props) => props.margin || "1rem 0"};
   border: 1px solid ${(props) => props.borderColor};
   outline: none;
   letter-spacing: 1px;
@@ -24,9 +24,22 @@ const Button = styled.button`
   }
 `;
 
-const RegularButton = ({ text, theme, borderColor, background }) => {
+const RegularButton = ({
+  text,
+  theme,
+  borderColor,
+  background,
+  margin,
+  onClickHandler,
+}) => {
   return (
-    <Button theme={theme} borderColor={borderColor} background={background}>
+    <Button
+      theme={theme}
+      borderColor={borderColor}
+      background={background}
+      margin={margin}
+      onClick={onClickHandler}
+    >
       {text}
     </Button>
   );
