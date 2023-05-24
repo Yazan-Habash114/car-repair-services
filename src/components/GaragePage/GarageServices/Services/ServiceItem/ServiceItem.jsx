@@ -18,12 +18,12 @@ const Container = styled.div`
   border-radius: 5px;
 `;
 
-const ServiceItem = () => {
+const ServiceItem = ({ service }) => {
   const myTheme = useTheme();
   return (
     <Container>
-      <TernaryHeading text="Service 1" theme={myTheme.secondary} />
-      <Details />
+      <TernaryHeading text={service.serviceName} theme={myTheme.secondary} />
+      <Details service={service} />
     </Container>
   );
 };

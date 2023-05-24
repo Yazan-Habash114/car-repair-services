@@ -13,27 +13,24 @@ const Row = styled.div`
   margin: 10px 0;
 `;
 
-const Details = () => {
+const Details = ({ service }) => {
   return (
     <Container>
       <Row>
         <QuarternHeading text="Service type:" />
-        <Sentence text="Maintenance" margin="0 0 0 5px" />
+        <Sentence text={service.serviceType} margin="0 0 0 5px" />
       </Row>
       <Row>
         <QuarternHeading text="Service time:" />
-        <Sentence text="01:00:00" margin="0 0 0 5px" />
+        <Sentence text={service.serviceTime} margin="0 0 0 5px" />
       </Row>
       <Row>
         <QuarternHeading text="Service price:" />
-        <Sentence text="$50" margin="0 0 0 5px" />
+        <Sentence text={`$${service.price}`} margin="0 0 0 5px" />
       </Row>
       <Row>
         <QuarternHeading text="Description:" />
-        <Sentence
-          text="During regular inspections your regular technician will check your vehicle for signs of a problem with the cooling system components, such as the water pump, thermostat, and radiator, to prevent problems before they start."
-          margin="0 0 0 5px"
-        />
+        <Sentence text={service.serviceDescription} margin="0 0 0 5px" />
       </Row>
     </Container>
   );

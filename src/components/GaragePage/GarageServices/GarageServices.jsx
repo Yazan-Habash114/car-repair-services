@@ -5,11 +5,10 @@ import Filters from "./Filters/Filters";
 import Services from "./Services/Services";
 
 const Container = styled.section`
-  margin-top: 100px;
+  margin-top: 80px;
 `;
 
 const Content = styled.div`
-  background-color: ${(props) => props.theme.secondary};
   display: flex;
   flex-direction: column;
   padding: 40px;
@@ -17,6 +16,7 @@ const Content = styled.div`
 
 const GarageServices = () => {
   const [selectedFilters, setSelectedFilters] = useState([]);
+
   return (
     <Container>
       <AlignedContainer>
@@ -25,7 +25,7 @@ const GarageServices = () => {
             selectedFilters={selectedFilters}
             setSelectedFilters={setSelectedFilters}
           />
-          <Services />
+          <Services filters={selectedFilters} />
         </Content>
       </AlignedContainer>
     </Container>
