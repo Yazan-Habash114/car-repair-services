@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import QuarternHeading from "../../../../../UI/Headings/QuarternHeading";
 import Sentence from "../../../../../UI/Sentence/Sentence";
+import TimeSlots from "./TimeSlots/TimeSlots";
 
 const Container = styled.div`
   margin: 10px 0;
@@ -10,6 +11,7 @@ const Container = styled.div`
 
 const Row = styled.div`
   display: flex;
+  flex-wrap: wrap;
   margin: 10px 0;
 `;
 
@@ -31,6 +33,10 @@ const Details = ({ service }) => {
       <Row>
         <QuarternHeading text="Description:" />
         <Sentence text={service.serviceDescription} margin="0 0 0 5px" />
+      </Row>
+      <Row>
+        <QuarternHeading text="Time Slots:" />
+        <TimeSlots slots={service.slotTimes} />
       </Row>
     </Container>
   );

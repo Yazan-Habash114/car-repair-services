@@ -16,10 +16,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
+  flex-wrap: wrap;
 `;
 
 const ServiceItem = ({ service }) => {
   const myTheme = useTheme();
+
   return (
     <Container>
       <TernaryHeading text={service.serviceName} theme={myTheme.secondary} />
