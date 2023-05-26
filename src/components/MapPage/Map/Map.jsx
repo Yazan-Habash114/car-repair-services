@@ -509,7 +509,7 @@ export default class Map extends Component {
 
     for (i = 0; i < garagesPopups.length; ++i) {
       var popup = new tt.Popup({ offset: popupOffsets }).setHTML(
-        `<div style="width: 150px" id="${garagesPopups[i].garageID}"><a style="color: black;text-decoration: none; display:flex; flex-direction: column; align-items: center" href="#"><h1 style="font-weight: 900">` +
+        `<div style="width: 150px" id="${garagesPopups[i].garageID}"><a style="color: black;text-decoration: none; display:flex; flex-direction: column; align-items: center" href="/garage/${garagesPopups[i].garageID}"><h1 style="font-weight: 900">` +
           `${garagesPopups[i].garageName}` +
           `</h1><br /><img width="100%" height="100%" src="${imagesNames[i]}" alt="image" /></a></div>`
       );
@@ -518,8 +518,20 @@ export default class Map extends Component {
   }
 
   componentDidMount() {
+    var problem = new URL(window.location).pathname.split("/")[2];
+    var carType = new URL(window.location).pathname.split("/")[3];
+
+    let url = "";
+
+    if (problem == undefined) {
+      url = `http://localhost:${springPort}/garages`;
+    } else if (problem !== "all") {
+      url = `http://localhost:${springPort}/garages/getGarageByServiceTypeAndCarType/${problem}/${carType}`;
+    } else {
+      url = `http://localhost:${springPort}/garages/getGarageByCarType/${carType}`;
+    }
     // Call the API to get garages
-    axios.get(`http://localhost:${springPort}/garages`).then((response) => {
+    axios.get(url).then((response) => {
       garagesPopups = response.data;
       tt = window.tt;
 
