@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import styled from "styled-components";
 import ServiceItem from "./ServiceItem/ServiceItem";
 import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
 import SearchInput from "../../../UI/SearchInput/SearchInput";
 import { axiosInstance } from "../../../../globals/axiosInstance.js";
 import Sentence from "../../../UI/Sentence/Sentence";
+import { Garage } from "../../../../pages/GaragePage";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.background};
@@ -28,11 +29,15 @@ const Services = ({ filters }) => {
   const [garageServices, setGarageServices] = useState([]);
   const services = useRef([]);
 
+  const garage = useContext(Garage);
+
   useEffect(() => {
-    axiosInstance.get("garages/5/services").then((response) => {
-      services.current = response.data;
-      setGarageServices(response.data);
-    });
+    axiosInstance
+      .get(`garages/${garage.garageID}/services`)
+      .then((response) => {
+        services.current = response.data;
+        setGarageServices(response.data);
+      });
   }, []);
 
   useEffect(() => {

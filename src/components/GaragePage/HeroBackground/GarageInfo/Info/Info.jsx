@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled, { useTheme } from "styled-components";
 import SecondaryHeading from "../../../../UI/Headings/SecondaryHeading";
 import QuarternHeading from "../../../../UI/Headings/QuarternHeading";
@@ -37,31 +37,34 @@ const Row = styled.div`
   border-radius: 5px;
 `;
 
-const Info = () => {
+const Info = ({ garage }) => {
   const myTheme = useTheme();
+
   return (
     <Container>
       <SecondaryHeading
-        text="UMT Garage"
+        text={garage.garageName}
         fontSize="32px"
         theme={myTheme.primary}
       />
       <Details>
         <Row>
           <QuarternHeading text="Garage Phone:" />
-          <Sentence text="123456" />
+          <Sentence text={garage.garagePhoneNumber} />
         </Row>
         <Row>
-          <QuarternHeading text="Garage Type:" />
-          <Sentence text="Maintenance" />
+          <QuarternHeading text="Garage Available:" />
+          <Sentence text={garage.availability ? "Open now" : "Closed"} />
         </Row>
         <Row>
           <QuarternHeading text="Car Type:" />
-          <Sentence text="Mercedes" />
+          <Sentence text={garage.carType} />
         </Row>
         <Row>
           <QuarternHeading text="Opening time:" />
-          <Sentence text="8:00 - 16:00" />
+          <Sentence
+            text={`${garage.garageStartTime} - ${garage.garageEndTime}`}
+          />
         </Row>
       </Details>
     </Container>

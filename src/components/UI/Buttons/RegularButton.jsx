@@ -21,7 +21,7 @@ const Button = styled.button`
 
   &:hover {
     background-color: ${(props) => props.borderColor};
-    background-color: ${(props) => props.onHover};
+    background-color: ${(props) => props.hoverHandler};
   }
 `;
 
@@ -42,7 +42,7 @@ const RegularButton = ({
       background={background}
       margin={margin}
       onClick={onClickHandler}
-      onHover={onHover}
+      hoverHandler={onHover}
       disabled={disabled}
     >
       {text}

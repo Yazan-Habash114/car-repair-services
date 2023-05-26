@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled, { useTheme } from "styled-components";
 import QuarternHeading from "../../../../../../../UI/Headings/QuarternHeading";
 import Sentence from "../../../../../../../UI/Sentence/Sentence";
 import RegularButton from "../../../../../../../UI/Buttons/RegularButton";
 import { axiosInstance } from "../../../../../../../../globals/axiosInstance.js";
+import { Garage } from "../../../../../../../../pages/GaragePage";
 
 const Container = styled.div`
   margin: 5px;
@@ -26,6 +27,8 @@ const Row = styled.div`
 const Slot = ({ service, item }) => {
   const myTheme = useTheme();
 
+  const garage = useContext(Garage);
+
   const [booked, setBooked] = useState(
     item.booked && item.bookedUserID == 10001
   );
@@ -34,7 +37,7 @@ const Slot = ({ service, item }) => {
     if (!booked) {
       axiosInstance
         .get(
-          `users/10001/garages/5/services/bookService/${service.serviceID}/slotTime/${item.slotTimeID}`
+          `users/10001/garages/${garage.garageID}/services/bookService/${service.serviceID}/slotTime/${item.slotTimeID}`
         )
         .then((response) => {
           item.booked = true;
@@ -44,7 +47,7 @@ const Slot = ({ service, item }) => {
     } else {
       axiosInstance
         .get(
-          `users/10001/garages/5/services/unBookService/${service.serviceID}/slotTime/${item.slotTimeID}`
+          `users/10001/garages/${garage.garageID}/services/unBookService/${service.serviceID}/slotTime/${item.slotTimeID}`
         )
         .then((response) => {
           item.booked = false;
