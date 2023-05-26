@@ -21,8 +21,8 @@ const Button = styled.button`
   }
 `;
 
-const SubmitButton = ({ text }) => {
-  return <Button>{text}</Button>;
+const SubmitButton = ({ text, onClickHandler }) => {
+  return <Button onClick={onClickHandler}>{text}</Button>;
 };
 
 export default SubmitButton;
