@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AlignedContainer from "../../UI/AlignedContainer/AlignedContainer";
-import GarageInfo from "./GarageInfo/GarageInfo";
+import AlignedContainer from "../AlignedContainer/AlignedContainer";
 
 const Background = styled.div`
   background-image: url("/images/HowItWorks/HowItWorks.png");
@@ -9,12 +8,10 @@ const Background = styled.div`
   padding: 220px 0;
 `;
 
-const HeroBackground = () => {
+const HeroBackground = ({ children }) => {
   return (
     <Background>
-      <AlignedContainer>
-        <GarageInfo />
-      </AlignedContainer>
+      <AlignedContainer>{children}</AlignedContainer>
     </Background>
   );
 };

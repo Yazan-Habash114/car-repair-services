@@ -1,6 +1,7 @@
 import React, { useEffect, useState, createContext } from "react";
 import Header from "../components/UI/Header/Header";
-import HeroBackground from "../components/GaragePage/HeroBackground/HeroBackground";
+import HeroBackground from "../components/UI/HeroBackground/HeroBackground";
+import GarageInfo from "../components/GaragePage/GarageInfo/GarageInfo";
 import GarageServices from "../components/GaragePage/GarageServices/GarageServices";
 import { axiosInstance } from "../globals/axiosInstance";
 import { useNavigate, useParams } from "react-router-dom";
@@ -25,7 +26,9 @@ const GaragePage = () => {
       {garage && (
         <>
           <Header />
-          <HeroBackground />
+          <HeroBackground>
+            <GarageInfo />
+          </HeroBackground>
           <GarageServices />
         </>
       )}

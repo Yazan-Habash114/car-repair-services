@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import Image from "../../../UI/Image/Image";
 import Info from "./Info/Info";
-import { Garage } from "../../../../pages/GaragePage";
+import { Garage } from "../../../pages/GaragePage";
 import GarageImage from "./GarageImage/GarageImage";
 
 const Container = styled.div`

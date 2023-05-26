@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled, { useTheme } from "styled-components";
-import SecondaryHeading from "../../../../UI/Headings/SecondaryHeading";
-import QuarternHeading from "../../../../UI/Headings/QuarternHeading";
-import Sentence from "../../../../UI/Sentence/Sentence";
+import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
+import QuarternHeading from "../../../UI/Headings/QuarternHeading";
+import Sentence from "../../../UI/Sentence/Sentence";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.secondary};
