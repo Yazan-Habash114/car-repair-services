@@ -13,6 +13,7 @@ const Container = styled.section`
   background-image: url("/images/HowItWorks/HowItWorks.png");
   background-size: cover;
   background-attachment: fixed;
+  text-align: center;
 `;
 
 const HowItWorks = () => {
