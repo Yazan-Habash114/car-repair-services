@@ -33,6 +33,7 @@ const RegularButton = ({
   margin,
   onClickHandler,
   onHover,
+  disabled,
 }) => {
   return (
     <Button
@@ -42,6 +43,7 @@ const RegularButton = ({
       margin={margin}
       onClick={onClickHandler}
       onHover={onHover}
+      disabled={disabled}
     >
       {text}
     </Button>

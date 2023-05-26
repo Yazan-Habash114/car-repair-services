@@ -36,7 +36,7 @@ const Details = ({ service }) => {
       </Row>
       <Row>
         <QuarternHeading text="Time Slots:" />
-        <TimeSlots slots={service.slotTimes} />
+        <TimeSlots service={service} slots={service.slotTimes} />
       </Row>
     </Container>
   );
