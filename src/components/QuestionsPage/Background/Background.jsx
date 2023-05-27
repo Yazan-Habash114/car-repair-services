@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "../../UI/Header/Header";
 
 const Container = styled.div`
   background-image: url("/images/Diagnosis/Diagnosis.jpg");
@@ -10,11 +9,7 @@ const Container = styled.div`
 `;
 
 const Background = () => {
-  return (
-    <Container>
-      <Header />
-    </Container>
-  );
+  return <Container />;
 };
 
 export default Background;

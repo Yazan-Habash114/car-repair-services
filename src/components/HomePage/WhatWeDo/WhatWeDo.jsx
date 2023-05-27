@@ -10,6 +10,7 @@ const Content = styled.section`
   flex-direction: column;
   align-items: center;
   margin-top: 200px;
+  text-align: center;
 `;
 
 const WhatWeDo = () => {

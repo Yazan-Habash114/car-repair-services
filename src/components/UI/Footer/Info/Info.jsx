@@ -5,11 +5,14 @@ import QuarternHeading from "../../../UI/Headings/QuarternHeading";
 import { info } from "../data.jsx";
 import Row from "../Row/Row";
 import Sentence from "../../Sentence/Sentence";
+import { Tablet } from "../../../../globals/responsive";
 
 const Container = styled.div`
   background: transparent;
   width: 400px;
   margin-left: 150px;
+
+  ${Tablet({ marginLeft: 0 })}
 `;
 
 const Contents = styled.div`

@@ -5,6 +5,7 @@ import GuaranteeService from "./GuaranteeService/GuaranteeService";
 import { guaranteeServices } from "./data";
 import Sentence from "../../UI/Sentence/Sentence";
 import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
+import { Tablet } from "../../../globals/responsive";
 
 const Container = styled.section`
   margin-top: 200px;
@@ -13,6 +14,8 @@ const Container = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
+
+  ${Tablet({ alignItems: "center", textAlign: "center" })}
 `;
 
 const ServiceDiv = styled.div`
@@ -20,6 +23,8 @@ const ServiceDiv = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 2rem;
+
+  ${Tablet({ flexDirection: "column" })}
 `;
 
 const CertifiedServices = () => {

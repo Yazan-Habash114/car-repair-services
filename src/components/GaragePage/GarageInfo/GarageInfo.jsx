@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Info from "./Info/Info";
 import { Garage } from "../../../pages/GaragePage";
 import GarageImage from "./GarageImage/GarageImage";
+import { MediumScreen } from "../../../globals/responsive";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.background};
@@ -11,6 +12,8 @@ const Container = styled.div`
   justify-content: space-around;
   align-items: flex-start;
   padding: 3rem;
+
+  ${MediumScreen({ flexDirection: "column", alignItems: "center" })}
 `;
 
 const GarageInfo = () => {

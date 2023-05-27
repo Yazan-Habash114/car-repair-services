@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Tablet } from "../../../../../globals/responsive";
 
 const Link = styled(NavLink)`
   text-decoration: none;
@@ -12,6 +13,8 @@ const Link = styled(NavLink)`
   &:hover {
     color: ${(props) => props.theme.primary};
   }
+
+  ${Tablet({ margin: "1rem 0" })}
 `;
 
 const NavItem = ({ link, target }) => {

@@ -5,6 +5,7 @@ import GarageInfo from "../components/GaragePage/GarageInfo/GarageInfo";
 import GarageServices from "../components/GaragePage/GarageServices/GarageServices";
 import { axiosInstance } from "../globals/axiosInstance";
 import { useNavigate, useParams } from "react-router-dom";
+import Footer from "../components/UI/Footer/Footer";
 
 export const Garage = createContext();
 
@@ -30,6 +31,7 @@ const GaragePage = () => {
             <GarageInfo />
           </HeroBackground>
           <GarageServices />
+          <Footer />
         </>
       )}
     </Garage.Provider>

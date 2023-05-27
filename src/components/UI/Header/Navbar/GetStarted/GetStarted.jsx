@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { Tablet } from "../../../../../globals/responsive";
 
 const Link = styled(NavLink)`
   margin: 0 3rem;
@@ -16,6 +17,8 @@ const Link = styled(NavLink)`
     background-color: ${(props) => props.theme.secondary};
     color: ${(props) => props.theme.default};
   }
+
+  ${Tablet({ marginBottom: "1rem" })}
 `;
 
 const GetStarted = () => {
