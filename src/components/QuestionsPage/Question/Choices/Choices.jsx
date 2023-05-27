@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 import ChoiceItem from "./ChoiceItem/ChoiceItem";
 import ButtonsWrapper from "./ButtonsWrapper/ButtonsWrapper";
 
@@ -9,7 +9,12 @@ const Box = styled.div`
   align-items: center;
 `;
 
-const Choices = ({ decisionTree, nextId, handleNextChoice }) => {
+const Choices = ({
+  decisionTree,
+  nextId,
+  handleNextChoice,
+  handlePreviousChoice,
+}) => {
   const [selected, setSelected] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null);
 
@@ -37,6 +42,11 @@ const Choices = ({ decisionTree, nextId, handleNextChoice }) => {
           handleNextChoice(selectedChoice);
           setSelected(-1);
           setSelectedChoice(null);
+        }}
+        onPreviousClick={() => {
+          handlePreviousChoice();
+          setSelected(-1);
+          setSelectedChoice(-1);
         }}
       />
     </Box>

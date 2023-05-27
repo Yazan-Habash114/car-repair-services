@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import Sentence from "../../UI/Sentence/Sentence";
 import Choices from "./Choices/Choices";
@@ -18,6 +18,7 @@ const Container = styled.div`
 `;
 
 const Question = () => {
+  const previous = useRef(-1);
   const [finish, setFinish] = useState(false);
   const [nextId, setNextId] = useState(0);
   const [assertions, setAssertions] = useState([]);
@@ -30,6 +31,7 @@ const Question = () => {
   const [problem, setProblem] = useState("all");
 
   useEffect(() => {
+    // Get Knowledge Base
     axiosInstance
       .get("/gatAllKB/")
       .then((response) => setKB(handleResponseKB(response)));
@@ -58,6 +60,7 @@ const Question = () => {
   }, [finish]);
 
   const handleNextChoice = (choice) => {
+    previous.current = nextId;
     let assertionsCopy = [...assertions];
     assertionsCopy.push({
       attribute: decisionTree[nextId].questionAttribute,
@@ -70,6 +73,17 @@ const Question = () => {
       } else if (choice.nextQuestion < 0) {
         setFinish(true);
       }
+    }
+  };
+
+  const handlePreviousChoice = () => {
+    const currentValue = previous.current;
+    if (currentValue > -1) {
+      previous.current = currentValue - 1;
+      let assertionsCopy = [...assertions];
+      assertionsCopy.pop();
+      setAssertions(assertionsCopy);
+      setNextId(currentValue);
     }
   };
 
@@ -90,6 +104,7 @@ const Question = () => {
             decisionTree={decisionTree}
             nextId={nextId}
             handleNextChoice={handleNextChoice}
+            handlePreviousChoice={handlePreviousChoice}
           />
         </>
       )}
