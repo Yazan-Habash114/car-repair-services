@@ -19,5 +19,4 @@ export const reducer = (state, action) => {
     default:
       throw new Error();
   }
-  return state;
 };
