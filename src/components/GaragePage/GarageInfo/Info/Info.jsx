@@ -3,6 +3,7 @@ import styled, { useTheme } from "styled-components";
 import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
 import QuarternHeading from "../../../UI/Headings/QuarternHeading";
 import Sentence from "../../../UI/Sentence/Sentence";
+import { MediumScreen, Tablet } from "../../../../globals/responsive";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.secondary};
@@ -13,6 +14,8 @@ const Container = styled.div`
   align-items: center;
   text-align: center;
   padding: 1rem 2rem;
+
+  ${MediumScreen({ marginTop: "1rem" })}
 `;
 
 const Details = styled.div`
@@ -20,6 +23,8 @@ const Details = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  ${Tablet({ flexDirection: "column" })}
 `;
 
 const Row = styled.div`
@@ -35,6 +40,8 @@ const Row = styled.div`
   margin: 5px;
   text-align: center;
   border-radius: 5px;
+
+  ${Tablet({ width: "300px" })}
 `;
 
 const Info = ({ garage }) => {

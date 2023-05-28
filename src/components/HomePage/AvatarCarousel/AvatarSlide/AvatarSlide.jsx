@@ -5,7 +5,8 @@ import Sentence from "../../../UI/Sentence/Sentence";
 import QuarternHeading from "../../../UI/Headings/QuarternHeading";
 import SpeechMark from "../SpeechMark/SpeechMark";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
+import { Tablet } from "../../../../globals/responsive";
 
 const Container = styled.div`
   display: flex;
@@ -14,6 +15,8 @@ const Container = styled.div`
   text-align: center;
   padding: 40px 180px;
   background-color: ${(props) => props.theme.secondary};
+
+  ${Tablet({ padding: "40px 100px" })}
 `;
 
 const AvatarSlide = ({ name, speech, img }) => {
@@ -25,9 +28,6 @@ const AvatarSlide = ({ name, speech, img }) => {
         <FontAwesomeIcon color={myTheme.default} icon={faQuoteLeft} />
       </SpeechMark>
       <Sentence text={speech} margin="10px 0" theme={myTheme.default} />
-      <SpeechMark>
-        <FontAwesomeIcon color={myTheme.default} icon={faQuoteRight} />
-      </SpeechMark>
       <QuarternHeading text={name} theme={myTheme.primary} margin="2rem 0" />
     </Container>
   );

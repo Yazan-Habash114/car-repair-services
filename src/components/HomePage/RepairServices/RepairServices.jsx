@@ -8,6 +8,7 @@ import RegularButton from "../../UI/Buttons/RegularButton";
 import ServicesList from "./List/ServicesList";
 import { servicesData } from "./data";
 import DarkLayer from "../../UI/DarkLayer/DarkLayer";
+import { MediumScreen } from "../../../globals/responsive";
 
 const Container = styled.section`
   margin-top: 200px;
@@ -21,6 +22,12 @@ const Container = styled.section`
 const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  ${MediumScreen({
+    margin: "0 100px",
+    flexDirection: "column",
+    alignItems: "center",
+  })}
 `;
 
 const RepairServices = () => {

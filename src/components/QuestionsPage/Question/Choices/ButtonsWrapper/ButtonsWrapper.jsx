@@ -6,7 +6,7 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-const ButtonsWrapper = ({ onNextClick }) => {
+const ButtonsWrapper = ({ onNextClick, onPreviousClick }) => {
   const myTheme = useTheme();
   return (
     <Wrapper>
@@ -14,6 +14,7 @@ const ButtonsWrapper = ({ onNextClick }) => {
         text="Back"
         theme={myTheme.secondary}
         margin="1rem 0.5rem"
+        onClickHandler={onPreviousClick}
       />
       <RegularButton
         text="Next"

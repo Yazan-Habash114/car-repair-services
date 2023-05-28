@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
+import { Tablet } from "../../../../globals/responsive";
 
 const Container = styled.div`
   border-radius: 5px;
@@ -12,9 +13,14 @@ const Container = styled.div`
   padding: 10px 40px;
   background-color: ${(props) => props.theme.background};
   text-align: center;
+
+  ${Tablet({ flexDirection: "column" })}
 `;
 
-const Contents = styled.div``;
+const Contents = styled.div`
+  display: flex;
+  ${Tablet({ flexDirection: "column" })};
+`;
 
 const Filter = styled.button`
   margin: 10px;

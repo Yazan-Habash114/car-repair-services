@@ -14,10 +14,12 @@ const Contents = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
+  text-align: center;
 `;
 
 const Wrapper = () => {
   const myTheme = useTheme();
+
   return (
     <Container>
       <AlignedContainer>

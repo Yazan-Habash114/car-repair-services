@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useReducer } from "react";
 import styled from "styled-components";
 import Sentence from "../../UI/Sentence/Sentence";
 import Choices from "./Choices/Choices";
@@ -6,6 +6,7 @@ import { axiosInstance } from "../../../globals/axiosInstance";
 import { forwardChain } from "../../../globals/forwardChain.js";
 import { handleResponseDT, handleResponseKB } from "./handleResponses";
 import Conclusion from "../Conclusion/Conclusion";
+import { reducer } from "./reducer";
 
 const Container = styled.div`
   width: 100%;
@@ -18,78 +19,106 @@ const Container = styled.div`
 `;
 
 const Question = () => {
-  const [finish, setFinish] = useState(false);
-  const [nextId, setNextId] = useState(0);
-  const [assertions, setAssertions] = useState([]);
-  const [KB, setKB] = useState([]);
-  const [decisionTree, setDecisionTree] = useState([]);
-  const [inferences, setInferences] = useState([]);
+  const previous = useRef(-1);
 
-  // Info to maps
-  const [carType, setCarType] = useState("");
-  const [problem, setProblem] = useState("all");
+  const initialStates = {
+    finish: false,
+    nextId: 0,
+    assertions: [],
+    KB: [],
+    decisionTree: [],
+    inferences: [],
+    carType: "",
+    problem: "all",
+  };
+
+  const [data, dispatch] = useReducer(reducer, initialStates);
 
   useEffect(() => {
+    // Get Knowledge Base
     axiosInstance
       .get("/gatAllKB/")
-      .then((response) => setKB(handleResponseKB(response)));
+      .then((response) =>
+        dispatch({ type: "setKB", KB: handleResponseKB(response) })
+      );
 
     // Get Decision-Tree
-    axiosInstance
-      .get(`/getAllQuestions`)
-      .then((response) => setDecisionTree(handleResponseDT(response)));
+    axiosInstance.get(`/getAllQuestions`).then((response) =>
+      dispatch({
+        type: "setDecisionTree",
+        decisionTree: handleResponseDT(response),
+      })
+    );
   }, []);
 
   useEffect(() => {
-    if (finish) {
-      setCarType(assertions[1].value);
-      let response = forwardChain(KB, assertions);
+    if (data.finish) {
+      dispatch({ type: "setCarType", carType: data.assertions[1].value });
+      let response = forwardChain(data.KB, data.assertions);
       for (let i = 0; i < response.inferences.length; i += 1) {
-        console.log(response.inferences[i]);
         if (
           response.inferences[i].attribute == "Maintenance" ||
           response.inferences[i].attribute == "Electrical"
         ) {
-          setProblem(response.inferences[i].attribute);
+          dispatch({
+            type: "setProblem",
+            problem: response.inferences[i].attribute,
+          });
         }
       }
-      setInferences(response.inferences);
+      dispatch({ type: "setInferences", inferences: response.inferences });
     }
-  }, [finish]);
+  }, [data.finish]);
 
   const handleNextChoice = (choice) => {
-    let assertionsCopy = [...assertions];
+    previous.current = data.nextId;
+    let assertionsCopy = [...data.assertions];
     assertionsCopy.push({
-      attribute: decisionTree[nextId].questionAttribute,
+      attribute: data.decisionTree[data.nextId].questionAttribute,
       value: choice.choiceText,
     });
-    setAssertions(assertionsCopy);
-    for (let i = 0; i < decisionTree.length; i += 1) {
-      if (decisionTree[i].id == choice.nextQuestion) {
-        setNextId(i);
+    dispatch({ type: "setAssertions", assertions: assertionsCopy });
+    for (let i = 0; i < data.decisionTree.length; i += 1) {
+      if (data.decisionTree[i].id == choice.nextQuestion) {
+        dispatch({ type: "setNextId", nextId: i });
       } else if (choice.nextQuestion < 0) {
-        setFinish(true);
+        dispatch({ type: "setFinish" });
       }
+    }
+  };
+
+  const handlePreviousChoice = () => {
+    const currentValue = previous.current;
+    if (currentValue > -1) {
+      previous.current = currentValue - 1;
+      let assertionsCopy = [...data.assertions];
+      assertionsCopy.pop();
+      dispatch({ type: "setAssertions", assertions: assertionsCopy });
+      dispatch({ type: "setNextId", nextId: currentValue });
     }
   };
 
   return (
     <Container>
-      {finish && (
+      {data.finish && (
         <Conclusion
-          inferences={inferences}
-          carType={carType}
-          problem={problem}
+          inferences={data.inferences}
+          carType={data.carType}
+          problem={data.problem}
         />
       )}
 
-      {decisionTree.length != 0 && nextId > -1 && !finish && (
+      {data.decisionTree.length != 0 && data.nextId > -1 && !data.finish && (
         <>
-          <Sentence text={decisionTree[nextId].questionText} fontSize="24px" />
+          <Sentence
+            text={data.decisionTree[data.nextId].questionText}
+            fontSize="24px"
+          />
           <Choices
-            decisionTree={decisionTree}
-            nextId={nextId}
+            decisionTree={data.decisionTree}
+            nextId={data.nextId}
             handleNextChoice={handleNextChoice}
+            handlePreviousChoice={handlePreviousChoice}
           />
         </>
       )}
