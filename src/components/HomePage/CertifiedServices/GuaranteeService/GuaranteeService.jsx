@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Card from "../../../UI/Card/Card";
 import TernaryHeading from "../../../UI/Headings/TernaryHeading";
 import Sentence from "../../../UI/Sentence/Sentence";
+import { Tablet } from "../../../../globals/responsive";
 
 const Container = styled.div`
   display: flex;
@@ -15,6 +16,8 @@ const Container = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 10px 1px ${(props) => props.theme.background};
   background-color: ${(props) => props.theme.background};
+
+  ${Tablet({ width: "100%" })}
 `;
 
 const GuaranteeService = ({ icon, title, explanation }) => {

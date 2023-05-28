@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Mobile, Tablet } from "../../../../../globals/responsive";
 
 const Item = styled.div`
   width: 360px;
@@ -13,6 +14,9 @@ const Item = styled.div`
   background-color: ${(props) => props.background};
   background-image: ${(props) => `url(${props.src})`};
   background-size: cover;
+
+  ${Tablet({ width: "500px" })}
+  ${Mobile({ width: "100%" })}
 `;
 
 const CatalogItem = ({ children, background, source }) => {

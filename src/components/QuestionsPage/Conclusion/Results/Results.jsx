@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import ResultItem from "../ResultItem/ResultItem";
 import Sentence from "../../../UI/Sentence/Sentence";
+import { Tablet } from "../../../../globals/responsive";
 
 const Container = styled.section`
   display: flex;
   justify-content: center;
+
+  ${Tablet({ flexDirection: "column", alignItems: "center" })}
 `;
 
 const Results = ({ inferences }) => {

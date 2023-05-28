@@ -2,7 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import MainHeading from "../../UI/Headings/MainHeading";
 import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Content = styled.div`
   height: 80vh;
@@ -15,8 +15,7 @@ const Content = styled.div`
   flex-direction: column;
 `;
 
-const StyledLink = styled(NavLink)`
-  text-decoration: none;
+const Button = styled.button`
   background-color: ${(props) => props.theme.primary};
   color: ${(props) => props.theme.secondary};
   font-size: 20px;
@@ -24,6 +23,8 @@ const StyledLink = styled(NavLink)`
   margin: 40px 0;
   border-radius: 5px;
   transition: 300ms;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: ${(props) => props.theme.background};
@@ -36,6 +37,8 @@ const StyledLink = styled(NavLink)`
 
 const NotFound404 = () => {
   const myTheme = useTheme();
+  const navigate = useNavigate();
+
   return (
     <Content>
       <MainHeading text="404" theme={myTheme.primary} fontSize="128px" />
@@ -43,7 +46,7 @@ const NotFound404 = () => {
         text="The requested page does not exist"
         theme={myTheme.primary}
       />
-      <StyledLink to="/">Return to Home Page</StyledLink>
+      <Button onClick={() => navigate("/")}>Return to Home Page</Button>
     </Content>
   );
 };
