@@ -11,8 +11,15 @@ const Input = styled.input`
   outline: none;
 `;
 
-const FormInput = ({ type, placeholder }) => {
-  return <Input type={type} placeholder={placeholder} required />;
+const FormInput = ({ type, placeholder, onChangeHandler }) => {
+  return (
+    <Input
+      type={type}
+      placeholder={placeholder}
+      required
+      onChange={onChangeHandler}
+    />
+  );
 };
 
 export default FormInput;
