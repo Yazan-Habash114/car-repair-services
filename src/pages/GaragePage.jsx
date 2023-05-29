@@ -27,7 +27,7 @@ const GaragePage = () => {
       {garage && (
         <>
           <Header />
-          <HeroBackground>
+          <HeroBackground backgroundImg="/images/HowItWorks/HowItWorks.png">
             <GarageInfo />
           </HeroBackground>
           <GarageServices />
