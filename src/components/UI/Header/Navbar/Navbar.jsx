@@ -24,7 +24,7 @@ const Navbar = () => {
   const handleLogout = () => {
     removeCookie("id");
     removeCookie("token");
-    navigate("/");
+    navigate("/membership");
   };
 
   return (
