@@ -4,7 +4,7 @@ import { useCookies } from "react-cookie";
 export const SiteGuard = ({ children }) => {
   const [cookies] = useCookies(["token", "id"]);
   const { token, id } = cookies;
-  if (!token || !id) return <Navigate to="/" />;
+  if (!token || !id) return <Navigate to="/membership" />;
   else return <>{children}</>;
 };
 

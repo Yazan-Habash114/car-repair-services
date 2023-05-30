@@ -6,7 +6,7 @@ const Button = styled.button`
   background-color: transparent;
   font-size: 12px;
   font-weight: bold;
-  padding: 12px 55px;
+  padding: 12px 40px;
   margin: 20px;
   border-radius: 10px;
   border: 2px solid ${(props) => props.theme.default};
@@ -15,6 +15,7 @@ const Button = styled.button`
   text-transform: uppercase;
   transition: transform 80ms ease-in;
   cursor: pointer;
+  width: 220px;
 
   &:active {
     transform: scale(0.9);
