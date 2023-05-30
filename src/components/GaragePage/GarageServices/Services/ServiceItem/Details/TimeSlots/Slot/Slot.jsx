@@ -5,6 +5,7 @@ import Sentence from "../../../../../../../UI/Sentence/Sentence";
 import RegularButton from "../../../../../../../UI/Buttons/RegularButton";
 import { axiosInstance } from "../../../../../../../../globals/axiosInstance.js";
 import { Garage } from "../../../../../../../../pages/GaragePage";
+import { useCookies } from "react-cookie";
 
 const Container = styled.div`
   margin: 5px;
@@ -26,28 +27,28 @@ const Row = styled.div`
 
 const Slot = ({ service, item }) => {
   const myTheme = useTheme();
-
+  const [cookies] = useCookies(["id"]);
   const garage = useContext(Garage);
 
   const [booked, setBooked] = useState(
-    item.booked && item.bookedUserID == 10001
+    item.booked && item.bookedUserID == cookies.id
   );
 
   const handleBooking = () => {
     if (!booked) {
       axiosInstance
         .get(
-          `users/10001/garages/${garage.garageID}/services/bookService/${service.serviceID}/slotTime/${item.slotTimeID}`
+          `users/${cookies.id}/garages/${garage.garageID}/services/bookService/${service.serviceID}/slotTime/${item.slotTimeID}`
         )
         .then((response) => {
           item.booked = true;
-          item.bookedUserID = 10001;
+          item.bookedUserID = cookies.id;
           setBooked(true);
         });
     } else {
       axiosInstance
         .get(
-          `users/10001/garages/${garage.garageID}/services/unBookService/${service.serviceID}/slotTime/${item.slotTimeID}`
+          `users/${cookies.id}/garages/${garage.garageID}/services/unBookService/${service.serviceID}/slotTime/${item.slotTimeID}`
         )
         .then((response) => {
           item.booked = false;
@@ -75,7 +76,7 @@ const Slot = ({ service, item }) => {
         text={booked ? "Booked successfully" : ""}
         theme={myTheme.primary}
       />
-      {item.booked && item.bookedUserID == 10001 && (
+      {item.booked && item.bookedUserID == cookies.id && (
         <RegularButton
           text="Cancel Booking"
           onClickHandler={handleBooking}
@@ -83,7 +84,7 @@ const Slot = ({ service, item }) => {
         />
       )}
 
-      {item.booked && item.bookedUserID != 10001 && (
+      {item.booked && item.bookedUserID != cookies.id && (
         <RegularButton
           text="Reserved"
           onClickHandler={handleBooking}

@@ -56,8 +56,8 @@ const DriverInfo = ({ driverId }) => {
   return (
     <Container>
       <Contents>
-        {data.map(({ key, value }) => (
-          <InfoItem>
+        {data.map(({ key, value }, index) => (
+          <InfoItem key={index}>
             <Sentence text={`${key}:`} margin="0 10px 0 0" />
             <Sentence text={value} />
           </InfoItem>

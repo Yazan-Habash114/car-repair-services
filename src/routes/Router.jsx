@@ -7,6 +7,7 @@ import NotFound from "../pages/NotFound";
 import GaragePage from "../pages/GaragePage";
 import ProfilePage from "../pages/ProfilePage";
 import { LoginGuard, SiteGuard } from "../pages/Guard/Guard";
+import SearchGarages from "../pages/SearchGarages";
 
 const Router = () => {
   return (
@@ -58,6 +59,14 @@ const Router = () => {
           element={
             <SiteGuard>
               <ProfilePage />
+            </SiteGuard>
+          }
+        />
+        <Route
+          path="/search-garages"
+          element={
+            <SiteGuard>
+              <SearchGarages />
             </SiteGuard>
           }
         />

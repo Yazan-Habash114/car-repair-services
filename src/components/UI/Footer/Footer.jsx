@@ -5,6 +5,7 @@ import { Tablet } from "../../../globals/responsive";
 
 const Container = styled.footer`
   background-image: url("/images/Footer/Footer.png");
+  background-size: cover;
   margin-top: 200px;
 
   ${Tablet({ display: "flex", justifyContent: "center" })}
