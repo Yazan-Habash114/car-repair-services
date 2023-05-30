@@ -25,11 +25,10 @@ const Card = styled.div`
 
 const CardImg = styled.div`
   width: 200px;
-  height: 200px;
+  height: 140px;
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 50%;
 `;
 
 const Row = styled.div`
