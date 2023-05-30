@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import NavItem from "../Item/NavItem";
 import { Tablet } from "../../../../../globals/responsive";
+import { useCookies } from "react-cookie";
 
 const Items = styled.ul`
   display: flex;
@@ -11,18 +12,28 @@ const Items = styled.ul`
 `;
 
 const NavItems = () => {
+  const [cookies] = useCookies(["id"]);
+
   const navLinks = [
     {
       linkName: "Home",
       linkTarget: "/",
     },
     {
-      linkName: "About",
-      linkTarget: "/",
+      linkName: "Profile",
+      linkTarget: `/profile/${cookies.id}`,
+    },
+    {
+      linkName: "Diagnosis",
+      linkTarget: "/questions",
     },
     {
       linkName: "Map",
       linkTarget: "/map",
+    },
+    {
+      linkName: "Garages",
+      linkTarget: "/search-garages",
     },
   ];
 
