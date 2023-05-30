@@ -22,6 +22,10 @@ const Button = styled.button`
   &:hover {
     background-color: ${(props) => props.borderColor};
     background-color: ${(props) => props.hoverHandler};
+    color: ${(props) =>
+      props.hoverHandler === props.theme.secondary
+        ? props.theme.default
+        : props.theme.secondary};
   }
 `;
 
