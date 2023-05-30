@@ -1,16 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import AlignedContainer from "../AlignedContainer/AlignedContainer";
+import { Tablet } from "../../../globals/responsive";
 
 const Background = styled.div`
-  background-image: url("/images/HowItWorks/HowItWorks.png");
+  background-image: url(${(props) => props.backgroundImg});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   padding: 220px 0;
+
+  ${Tablet({ backgroundAttachment: "local" })}
 `;
 
-const HeroBackground = ({ children }) => {
+const HeroBackground = ({ children, backgroundImg }) => {
   return (
-    <Background>
+    <Background backgroundImg={backgroundImg}>
       <AlignedContainer>{children}</AlignedContainer>
     </Background>
   );

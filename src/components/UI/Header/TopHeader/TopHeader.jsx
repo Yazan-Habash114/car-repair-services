@@ -15,7 +15,7 @@ const TopHeader = () => {
   const myTheme = useTheme();
   return (
     <Container>
-      <Logo />
+      <Logo source="/images/Logo/logo.png" />
       <Sentence
         text="Schedule your appointment"
         fontWeight={300}
