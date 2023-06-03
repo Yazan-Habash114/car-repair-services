@@ -6,6 +6,7 @@ import RightSide from "./RightSide/RightSide";
 
 const Container = styled.section`
   margin-top: 200px;
+  text-align: center;
 `;
 
 const Contents = styled.div`

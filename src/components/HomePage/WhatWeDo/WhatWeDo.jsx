@@ -21,7 +21,8 @@ const WhatWeDo = () => {
         <Sentence
           text="We offer full service auto repair & maintenance"
           fontWeight={300}
-          fontSize="24px"
+          fontSize="20px"
+          margin="1.2rem 0 0 0"
         />
         <Catalog />
       </Content>

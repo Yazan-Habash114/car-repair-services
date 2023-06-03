@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "../../UI/Slider/Slider";
-import Slide from "./HeroSlide/HeroSlide";
+import HeroSlide from "./HeroSlide/HeroSlide";
 
 const HeroSlider = () => {
   const imagesSources = [
@@ -11,7 +11,7 @@ const HeroSlider = () => {
   return (
     <Slider autoPlay={true} infiniteLoop={true} interval={3000}>
       {imagesSources.map((imgSrc) => (
-        <Slide key={imgSrc} background={imgSrc} />
+        <HeroSlide key={imgSrc} background={imgSrc} />
       ))}
     </Slider>
   );

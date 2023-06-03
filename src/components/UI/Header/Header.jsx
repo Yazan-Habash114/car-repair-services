@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar/Navbar";
-import AlignedContainer from "../../UI/AlignedContainer/AlignedContainer";
+import AlignedNavbar from "../../UI/AlignedNavbar/AlignedNavbar";
 import TopHeader from "./TopHeader/TopHeader";
-import { Tablet } from "../../../globals/responsive";
+import { MediumScreen } from "../../../globals/responsive";
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -11,16 +11,25 @@ const HeaderContainer = styled.header`
   top: 0;
   z-index: 100;
 
-  ${Tablet({ position: "relative" })}
+  ${MediumScreen({ position: "relative" })}
 `;
 
 const Header = () => {
+  const [showNavItems, setShowNavItems] = useState(true);
+
+  const handleShowNavItems = () => {
+    setShowNavItems(!showNavItems);
+  };
+
   return (
     <HeaderContainer>
-      <AlignedContainer>
-        <TopHeader />
-        <Navbar />
-      </AlignedContainer>
+      <AlignedNavbar>
+        <TopHeader handleShowNavItems={handleShowNavItems} />
+        <Navbar
+          showNavItems={showNavItems}
+          handleShowNavItems={handleShowNavItems}
+        />
+      </AlignedNavbar>
     </HeaderContainer>
   );
 };

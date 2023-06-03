@@ -5,17 +5,18 @@ import GuaranteeService from "./GuaranteeService/GuaranteeService";
 import { guaranteeServices } from "./data";
 import Sentence from "../../UI/Sentence/Sentence";
 import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
-import { Tablet } from "../../../globals/responsive";
+import { Landscape } from "../../../globals/responsive";
 
 const Container = styled.section`
-  margin-top: 200px;
+  margin: 120px auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  max-width: 1440px;
 
-  ${Tablet({ alignItems: "center", textAlign: "center" })}
+  ${Landscape({ alignItems: "center", textAlign: "center" })}
 `;
 
 const ServiceDiv = styled.div`
@@ -24,7 +25,7 @@ const ServiceDiv = styled.div`
   justify-content: center;
   margin-top: 2rem;
 
-  ${Tablet({ flexDirection: "column" })}
+  ${Landscape({ flexDirection: "column" })}
 `;
 
 const CertifiedServices = () => {
@@ -38,7 +39,8 @@ const CertifiedServices = () => {
         <Sentence
           text="These few steps will help you understand how our services works"
           fontWeight={300}
-          fontSize="24px"
+          fontSize="20px"
+          margin="16px 0 0 0"
         />
         <ServiceDiv>
           {guaranteeServices.map((service) => (
