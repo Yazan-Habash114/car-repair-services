@@ -11,7 +11,7 @@ import DarkLayer from "../../UI/DarkLayer/DarkLayer";
 import { MediumScreen } from "../../../globals/responsive";
 
 const Container = styled.section`
-  margin-top: 200px;
+  margin: 120px auto;
   background-image: url("/images/RepairServices/Repair.png");
   background-size: cover;
   background-position: center;
@@ -21,10 +21,9 @@ const Container = styled.section`
 
 const Content = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
 
   ${MediumScreen({
-    margin: "0 100px",
     flexDirection: "column",
     alignItems: "center",
   })}

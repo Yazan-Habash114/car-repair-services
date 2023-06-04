@@ -6,10 +6,10 @@ import AlignedContainer from "../../UI/AlignedContainer/AlignedContainer";
 import Catalog from "./Catalog/Catalog";
 
 const Content = styled.section`
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
   text-align: center;
 `;
 

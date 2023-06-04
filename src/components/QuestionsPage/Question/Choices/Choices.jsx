@@ -18,9 +18,33 @@ const Choices = ({
   const [selected, setSelected] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null);
 
+  function delay(duration) {
+    return new Promise((resolve, reject) =>
+      setTimeout(() => {
+        resolve();
+      }, duration)
+    );
+  }
+
   const handleSelect = (index, choice) => {
     setSelected(index);
     setSelectedChoice(choice);
+  };
+
+  const handleNext = () => {
+    delay(300).then(() => {
+      handleNextChoice(selectedChoice);
+      setSelected(-1);
+      setSelectedChoice(null);
+    });
+  };
+
+  const handlePrevious = () => {
+    delay(300).then(() => {
+      handlePreviousChoice();
+      setSelected(-1);
+      setSelectedChoice(-1);
+    });
   };
 
   return (
@@ -38,16 +62,8 @@ const Choices = ({
       })}
 
       <ButtonsWrapper
-        onNextClick={() => {
-          handleNextChoice(selectedChoice);
-          setSelected(-1);
-          setSelectedChoice(null);
-        }}
-        onPreviousClick={() => {
-          handlePreviousChoice();
-          setSelected(-1);
-          setSelectedChoice(-1);
-        }}
+        onNextClick={handleNext}
+        onPreviousClick={handlePrevious}
       />
     </Box>
   );

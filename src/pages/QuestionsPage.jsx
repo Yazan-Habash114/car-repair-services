@@ -8,7 +8,7 @@ const QuestionsPage = () => {
   return (
     <>
       <Header />
-      <Background />
+      {/* <Background /> */}
       <Wrapper />
       <Footer />
     </>

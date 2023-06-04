@@ -5,7 +5,7 @@ import LeftSide from "./LeftSide/LeftSide";
 import RightSide from "./RightSide/RightSide";
 
 const Container = styled.section`
-  margin-top: 200px;
+  margin: 120px auto;
   text-align: center;
 `;
 

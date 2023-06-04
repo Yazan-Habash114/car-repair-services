@@ -6,7 +6,7 @@ import Steps from "./Steps/Steps";
 import { Mobile } from "../../../globals/responsive";
 
 const Container = styled.section`
-  margin-top: 200px;
+  margin-top: 120px auto;
   display: flex;
   flex-direction: column;
   align-items: center;

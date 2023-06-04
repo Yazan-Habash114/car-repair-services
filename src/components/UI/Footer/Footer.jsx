@@ -6,7 +6,7 @@ import { Landscape } from "../../../globals/responsive";
 const Container = styled.footer`
   background-image: url("/images/Footer/Footer.png");
   background-size: cover;
-  margin-top: 200px;
+  margin-top: 120px;
 
   ${Landscape({ display: "flex", justifyContent: "center" })}
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NavItems from "./NavItems/NavItems";
 import GetStarted from "./GetStarted/GetStarted";
 import RegularButton from "../../../UI/Buttons/RegularButton";
-import { Landscape } from "../../../../globals/responsive";
+import { Landscape, Mobile } from "../../../../globals/responsive";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +15,7 @@ const Container = styled.nav`
   background-color: ${(props) => props.theme.background};
 
   ${Landscape({ flexDirection: "column" })}
+  ${(props) => (!props.showItems ? Landscape({ padding: 0 }) : null)}
 `;
 
 const Navbar = ({ showNavItems }) => {
@@ -28,7 +29,7 @@ const Navbar = ({ showNavItems }) => {
   };
 
   return (
-    <Container>
+    <Container showItems={showNavItems}>
       {showNavItems && <NavItems />}
       {!(cookies.id && cookies.token) && showNavItems && <GetStarted />}
       {cookies.id && cookies.token && showNavItems && (
