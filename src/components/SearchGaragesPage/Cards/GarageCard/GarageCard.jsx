@@ -7,7 +7,7 @@ import { faCar, faGlobe, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faClock, faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import RegularButton from "../../../UI/Buttons/RegularButton";
 import { useNavigate } from "react-router-dom";
-import { MediumScreen } from "../../../../globals/responsive";
+import { Mobile } from "../../../../globals/responsive";
 
 const Card = styled.div`
   background-color: ${(props) => props.theme.background};
@@ -20,7 +20,7 @@ const Card = styled.div`
   margin: 10px;
   padding: 10px 0;
 
-  ${MediumScreen({ width: "600px" })}
+  ${Mobile({ width: "100%", margin: "1rem 0" })}
 `;
 
 const CardImg = styled.div`
@@ -29,6 +29,8 @@ const CardImg = styled.div`
   background-image: url(${(props) => props.url});
   background-repeat: no-repeat;
   background-size: cover;
+
+  ${Mobile({ width: "100%", height: "240px" })}
 `;
 
 const Row = styled.div`
