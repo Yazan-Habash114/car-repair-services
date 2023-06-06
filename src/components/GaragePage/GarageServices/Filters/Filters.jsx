@@ -1,37 +1,37 @@
 import React from "react";
 import styled from "styled-components";
 import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
-import { Tablet } from "../../../../globals/responsive";
+import { Landscape } from "../../../../globals/responsive";
 
 const Container = styled.div`
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 5px;
   margin-bottom: 30px;
+  padding: 1.8rem 3.2rem;
+  text-align: center;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 10px 40px;
-  background-color: ${(props) => props.theme.background};
-  text-align: center;
 
-  ${Tablet({ flexDirection: "column" })}
+  ${Landscape({ flexDirection: "column" })}
 `;
 
 const Contents = styled.div`
   display: flex;
-  ${Tablet({ flexDirection: "column" })};
+  ${Landscape({ flexDirection: "column" })};
 `;
 
 const Filter = styled.button`
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 10px;
   font-size: 20px;
   cursor: pointer;
   padding: 10px 25px;
   border: none;
   background-color: ${(props) =>
-    props.selectedFilters.includes(props.filter)
-      ? props.theme.secondary
-      : props.theme.primary};
+    props.selectedFilters.includes(props.filter) ? props.theme.secondary : ""};
   color: ${(props) =>
     props.selectedFilters.includes(props.filter)
       ? props.theme.default
@@ -58,7 +58,7 @@ const Filters = ({ selectedFilters, setSelectedFilters }) => {
 
   return (
     <Container>
-      <SecondaryHeading text="Filter the services" />
+      <SecondaryHeading text="Filter the Services" />
       <Contents>
         {filters.map((filter, index) => (
           <Filter

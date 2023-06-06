@@ -6,10 +6,10 @@ import AlignedContainer from "../../UI/AlignedContainer/AlignedContainer";
 import Catalog from "./Catalog/Catalog";
 
 const Content = styled.section`
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
   text-align: center;
 `;
 
@@ -21,7 +21,8 @@ const WhatWeDo = () => {
         <Sentence
           text="We offer full service auto repair & maintenance"
           fontWeight={300}
-          fontSize="24px"
+          fontSize="20px"
+          margin="1.2rem 0 0 0"
         />
         <Catalog />
       </Content>

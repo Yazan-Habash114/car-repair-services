@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AlignedContainer from "../AlignedContainer/AlignedContainer";
-import { Tablet } from "../../../globals/responsive";
+import { Landscape } from "../../../globals/responsive";
 
 const Background = styled.div`
   background-image: url(${(props) => props.backgroundImg});
@@ -11,7 +11,7 @@ const Background = styled.div`
   background-attachment: fixed;
   padding: 220px 0;
 
-  ${Tablet({ backgroundAttachment: "local" })}
+  ${Landscape({ backgroundAttachment: "local" })}
 `;
 
 const HeroBackground = ({ children, backgroundImg }) => {

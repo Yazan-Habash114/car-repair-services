@@ -6,7 +6,6 @@
   color: white;
   font-weight: bold;
   transition: background-color 0.15s ease-in-out;
-  text-transform: uppercase;
   border: none;
   outline: none;
   border-radius: 5px;
@@ -24,11 +23,10 @@
   width: 45%;
   padding: 10px;
   margin: 10px;
-  background-color: white;
   z-index: 10;
-  box-shadow: rgba(0, 0, 0, 0.45) 2px 2px 2px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 5px;
-  background-color: #cfd6d9;
+  background-color: white;
   transition: 300ms;
 }
 
@@ -41,14 +39,10 @@
     width: 45%;
     padding: 10px;
     margin: 10px;
-    background-color: white;
     z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.45) 2px 2px 2px 0px;
     border-radius: 5px;
-    background-color: #cfd6d9;
     transition: 300ms;
-    height: 75px;
-    overflow-y: scroll;
     width: 75%;
   }
 }
@@ -67,7 +61,7 @@
 
 #route-labels div:hover {
   cursor: pointer;
-  box-shadow: 0px 2px #d9d9d9;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 #modal {
@@ -84,6 +78,8 @@
 
 #modal-content {
   background-color: lightgray;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 5px;
   color: #2a2a2a;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   font-weight: bold;

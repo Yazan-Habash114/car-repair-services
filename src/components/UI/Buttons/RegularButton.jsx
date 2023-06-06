@@ -12,7 +12,7 @@ const Button = styled.button`
   border: 1px solid ${(props) => props.borderColor};
   outline: none;
   letter-spacing: 1px;
-  transition: 300ms;
+  transition: 0.1s;
   cursor: pointer;
 
   &:active {

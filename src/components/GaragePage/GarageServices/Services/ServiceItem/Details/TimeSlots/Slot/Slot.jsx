@@ -8,9 +8,8 @@ import { Garage } from "../../../../../../../../pages/GaragePage";
 import { useCookies } from "react-cookie";
 
 const Container = styled.div`
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   margin: 5px;
-  background-color: ${(props) => props.theme.secondary};
-  color: ${(props) => props.theme.default};
   padding: 10px;
   border-radius: 5px;
   display: flex;
@@ -80,7 +79,7 @@ const Slot = ({ service, item }) => {
         <RegularButton
           text="Cancel Booking"
           onClickHandler={handleBooking}
-          onHover={myTheme.primary}
+          onHover={myTheme.secondary}
         />
       )}
 
@@ -88,7 +87,7 @@ const Slot = ({ service, item }) => {
         <RegularButton
           text="Reserved"
           onClickHandler={handleBooking}
-          onHover={myTheme.primary}
+          onHover={myTheme.secondary}
           disabled
         />
       )}
@@ -97,7 +96,7 @@ const Slot = ({ service, item }) => {
         <RegularButton
           text="Book at this time"
           onClickHandler={handleBooking}
-          onHover={myTheme.primary}
+          onHover={myTheme.secondary}
         />
       )}
     </Container>

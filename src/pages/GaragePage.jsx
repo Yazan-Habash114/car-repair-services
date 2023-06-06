@@ -10,13 +10,13 @@ import Footer from "../components/UI/Footer/Footer";
 export const Garage = createContext();
 
 const GaragePage = () => {
-  const { id } = useParams();
+  const { garageId } = useParams();
   const navigate = useNavigate();
 
   const [garage, setGarage] = useState(null);
 
   useEffect(() => {
-    axiosInstance.get(`/garages/${id}`).then((response) => {
+    axiosInstance.get(`/garages/${garageId}`).then((response) => {
       if (!response.data) navigate("/notFound");
       else setGarage(response.data);
     });
@@ -27,9 +27,7 @@ const GaragePage = () => {
       {garage && (
         <>
           <Header />
-          <HeroBackground backgroundImg="/images/HowItWorks/HowItWorks.png">
-            <GarageInfo />
-          </HeroBackground>
+          <GarageInfo />
           <GarageServices />
           <Footer />
         </>

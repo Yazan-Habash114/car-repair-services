@@ -5,11 +5,11 @@ import { MediumScreen } from "../../../globals/responsive";
 const Container = styled.div`
   margin: 0 8rem;
 
-  ${MediumScreen({ margin: "0 1rem" })}
+  ${MediumScreen({ margin: 0 })}
 `;
 
-const AlignedContainer = ({ children }) => {
+const AlignedNavbar = ({ children }) => {
   return <Container>{children}</Container>;
 };
 
-export default AlignedContainer;
+export default AlignedNavbar;

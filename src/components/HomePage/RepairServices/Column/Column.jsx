@@ -3,14 +3,10 @@ import styled from "styled-components";
 import { MediumScreen } from "../../../../globals/responsive";
 
 const Container = styled.div`
-  margin: 6rem 1.5rem;
-  width: 320px;
+  margin: 6rem 0;
+  flex: 1;
 
-  &:first-child {
-    margin: 6rem 0;
-  }
-
-  ${MediumScreen({ marginBottom: "40px", marginTop: 0, width: "100%" })}
+  ${MediumScreen({ margin: "1.2rem 0", width: "400px", textAlign: "center" })}
 `;
 
 const Column = ({ children }) => {

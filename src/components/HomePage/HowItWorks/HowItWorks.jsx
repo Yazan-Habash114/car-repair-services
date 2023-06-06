@@ -3,9 +3,10 @@ import styled, { useTheme } from "styled-components";
 import SecondaryHeading from "../../UI/Headings/SecondaryHeading";
 import Sentence from "../../UI/Sentence/Sentence";
 import Steps from "./Steps/Steps";
+import { Mobile } from "../../../globals/responsive";
 
 const Container = styled.section`
-  margin-top: 200px;
+  margin-top: 120px auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,10 +15,13 @@ const Container = styled.section`
   background-size: cover;
   background-attachment: fixed;
   text-align: center;
+
+  ${Mobile({ padding: "0 1rem" })}
 `;
 
 const HowItWorks = () => {
   const myTheme = useTheme();
+
   return (
     <Container>
       <SecondaryHeading
@@ -29,7 +33,8 @@ const HowItWorks = () => {
         text="These few steps will help you understand how our services works"
         fontWeight={300}
         theme={myTheme.default}
-        fontSize="24px"
+        fontSize="20px"
+        margin="1.2rem 0 0 0"
       />
       <Steps />
     </Container>

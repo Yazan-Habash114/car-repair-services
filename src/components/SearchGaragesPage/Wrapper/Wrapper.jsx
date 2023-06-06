@@ -5,9 +5,12 @@ import TopSection from "../TopSection/TopSection";
 import Cards from "../Cards/Cards";
 import { axiosInstance } from "../../../globals/axiosInstance";
 import { useRef } from "react";
+import { MediumScreen } from "../../../globals/responsive";
 
 const Container = styled.main`
   padding-top: 300px;
+
+  ${MediumScreen({ paddingTop: "150px" })}
 `;
 
 const Wrapper = () => {

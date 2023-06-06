@@ -8,7 +8,7 @@ const Item = styled.button`
   margin: 10px 0;
   padding: 8px 75px;
   border-radius: 5px;
-  transition: 0.3s;
+  transition: 0.1s;
   outline: none;
   border: none;
   cursor: pointer;

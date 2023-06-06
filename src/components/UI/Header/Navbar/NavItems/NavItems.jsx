@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import NavItem from "../Item/NavItem";
-import { Tablet } from "../../../../../globals/responsive";
+import { Landscape } from "../../../../../globals/responsive";
 import { useCookies } from "react-cookie";
 
 const Items = styled.ul`
   display: flex;
   justify-content: space-between;
 
-  ${Tablet({ flexDirection: "column", marginBottom: "2rem" })}
+  ${Landscape({ flexDirection: "column", marginBottom: "2rem" })}
 `;
 
 const NavItems = () => {

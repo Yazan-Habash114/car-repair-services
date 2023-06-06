@@ -2,6 +2,7 @@ import React from "react";
 import styled, { useTheme } from "styled-components";
 import TernaryHeading from "../../../../UI/Headings/TernaryHeading";
 import Sentence from "../../../../UI/Sentence/Sentence";
+import { Mobile } from "../../../../../globals/responsive";
 
 const Item = styled.div`
   display: flex;
@@ -9,6 +10,8 @@ const Item = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   width: 180px;
+
+  ${Mobile({ flexWrap: "nowrap", width: "100%", justifyContent: "flex-start" })}
 `;
 
 const Separator = styled.div`

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NavItems from "./NavItems/NavItems";
 import GetStarted from "./GetStarted/GetStarted";
 import RegularButton from "../../../UI/Buttons/RegularButton";
-import { Tablet } from "../../../../globals/responsive";
+import { Landscape, Mobile } from "../../../../globals/responsive";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
@@ -11,13 +11,14 @@ const Container = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1rem 3rem;
   background-color: ${(props) => props.theme.background};
 
-  ${Tablet({ flexDirection: "column" })}
+  ${Landscape({ flexDirection: "column" })}
+  ${(props) => (!props.showItems ? Landscape({ padding: 0 }) : null)}
 `;
 
-const Navbar = () => {
+const Navbar = ({ showNavItems }) => {
   const [cookies, setCookie, removeCookie] = useCookies(["id", "token"]);
   const navigate = useNavigate();
 
@@ -28,10 +29,10 @@ const Navbar = () => {
   };
 
   return (
-    <Container>
-      <NavItems />
-      {!(cookies.id && cookies.token) && <GetStarted />}
-      {cookies.id && cookies.token && (
+    <Container showItems={showNavItems}>
+      {showNavItems && <NavItems />}
+      {!(cookies.id && cookies.token) && showNavItems && <GetStarted />}
+      {cookies.id && cookies.token && showNavItems && (
         <RegularButton
           text="Logout"
           margin="0 3rem;"

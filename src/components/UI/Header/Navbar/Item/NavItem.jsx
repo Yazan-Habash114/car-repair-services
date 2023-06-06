@@ -1,12 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { Tablet } from "../../../../../globals/responsive";
+import { Landscape } from "../../../../../globals/responsive";
 
 const Link = styled(NavLink)`
   text-decoration: none;
   color: ${(props) => props.theme.text};
-  margin: 0 3rem;
+  margin-right: 6rem;
   font-weight: 600;
   transition: 0.3s ease-in;
 
@@ -14,7 +14,7 @@ const Link = styled(NavLink)`
     color: ${(props) => props.theme.primary};
   }
 
-  ${Tablet({ margin: "1rem 0" })}
+  ${Landscape({ margin: "1rem 0" })}
 `;
 
 const NavItem = ({ link, target }) => {

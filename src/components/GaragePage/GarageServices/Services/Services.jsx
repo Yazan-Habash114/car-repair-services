@@ -8,9 +8,8 @@ import Sentence from "../../../UI/Sentence/Sentence";
 import { Garage } from "../../../../pages/GaragePage";
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.background};
   border-radius: 5px;
-  padding: 10px 40px;
+  padding: 1.8rem 3.2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -21,7 +20,6 @@ const Contents = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  flex-direction: column;
   align-items: center;
 `;
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { axiosInstance } from "../../../globals/axiosInstance";
 import InfoItem from "./InfoItem/InfoItem";
 import Sentence from "../../UI/Sentence/Sentence";
-import { Tablet } from "../../../globals/responsive";
+import { Landscape } from "../../../globals/responsive";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.primary};
@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  ${Tablet({ marginTop: "30px" })}
+  ${Landscape({ marginTop: "30px" })}
 `;
 
 const Contents = styled.div`

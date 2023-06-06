@@ -8,9 +8,17 @@ export const Mobile = (props) => {
   `;
 };
 
-export const Tablet = (props) => {
+export const Portrait = (props) => {
   return css`
-    @media only screen and (max-width: 740px) {
+    @media only screen and (max-width: 768px) {
+      ${props}
+    }
+  `;
+};
+
+export const Landscape = (props) => {
+  return css`
+    @media only screen and (max-width: 1024px) {
       ${props}
     }
   `;
@@ -18,7 +26,7 @@ export const Tablet = (props) => {
 
 export const MediumScreen = (props) => {
   return css`
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1224px) {
       ${props}
     }
   `;

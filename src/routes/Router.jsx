@@ -13,7 +13,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<HomePage title="Home Page" />} />
+        <Route index element={<HomePage />} />
         <Route
           path="/membership"
           element={
@@ -47,7 +47,7 @@ const Router = () => {
           }
         />
         <Route
-          path="/garage/:id"
+          path="/garage/:garageId"
           element={
             <SiteGuard>
               <GaragePage />
@@ -55,7 +55,7 @@ const Router = () => {
           }
         />
         <Route
-          path="/profile/:id"
+          path="/profile/:profileId"
           element={
             <SiteGuard>
               <ProfilePage />

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import DriverImage from "../DriverImage/DriverImage";
 import { useCookies } from "react-cookie";
 import DriverInfo from "../DriverInfo/DriverInfo";
-import { Tablet } from "../../../globals/responsive";
+import { Landscape } from "../../../globals/responsive";
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.background};
@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-around;
 
-  ${Tablet({
+  ${Landscape({
     padding: "40px 20px",
     flexDirection: "column",
     alignItems: "center",

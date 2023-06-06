@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { avatars } from "./data.js";
 
 const Container = styled.section`
-  margin-top: 200px;
+  margin: 120px auto;
 `;
 
 const AvatarCarousel = () => {

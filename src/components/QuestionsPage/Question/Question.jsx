@@ -7,15 +7,17 @@ import { forwardChain } from "../../../globals/forwardChain.js";
 import { handleResponseDT, handleResponseKB } from "./handleResponses";
 import Conclusion from "../Conclusion/Conclusion";
 import { reducer } from "./reducer";
+import { Mobile } from "../../../globals/responsive";
 
 const Container = styled.div`
   width: 100%;
   margin: 1rem 0;
   padding: 1rem 4rem;
-  background-color: ${(props) => props.theme.background};
   border-radius: 5px;
-  box-shadow: 0 0 15px 3px ${(props) => props.theme.background};
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   text-align: center;
+
+  ${Mobile({ padding: "1rem" })}
 `;
 
 const Question = () => {
