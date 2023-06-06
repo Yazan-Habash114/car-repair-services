@@ -4,14 +4,17 @@ import Info from "./Info/Info";
 import { Garage } from "../../../pages/GaragePage";
 import GarageImage from "./GarageImage/GarageImage";
 import { MediumScreen } from "../../../globals/responsive";
+import AlignedContainer from "../../UI/AlignedContainer/AlignedContainer";
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.background};
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   padding: 3rem;
+  margin-top: 250px;
 
   ${MediumScreen({ flexDirection: "column", alignItems: "center" })}
 `;
@@ -19,10 +22,12 @@ const Container = styled.div`
 const GarageInfo = () => {
   const garage = useContext(Garage);
   return (
-    <Container>
-      <GarageImage garage={garage} />
-      <Info garage={garage} />
-    </Container>
+    <AlignedContainer>
+      <Container>
+        <GarageImage garage={garage} />
+        <Info garage={garage} />
+      </Container>
+    </AlignedContainer>
   );
 };
 

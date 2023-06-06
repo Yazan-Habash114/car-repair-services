@@ -4,7 +4,9 @@ import Image from "../../../UI/Image/Image";
 const GarageImage = ({ garage }) => {
   return (
     <Image
-      width="200px"
+      width="240px"
+      height="240px"
+      classType="circled-img-profile"
       src={`http://localhost:8080/garages/${garage.garageID}/profileImage/1`}
     />
   );

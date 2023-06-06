@@ -1,21 +1,28 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
 import SecondaryHeading from "../../../UI/Headings/SecondaryHeading";
-import QuarternHeading from "../../../UI/Headings/QuarternHeading";
 import Sentence from "../../../UI/Sentence/Sentence";
 import { MediumScreen, Landscape } from "../../../../globals/responsive";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBriefcase,
+  faCar,
+  faClock,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.secondary};
-  color: ${(props) => props.theme.background};
+  border-left: 3px solid ${(props) => props.theme.primary};
+  border-right: 3px solid ${(props) => props.theme.primary};
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 1rem 2rem;
+  margin-top: 2.8rem;
 
-  ${MediumScreen({ marginTop: "1rem" })}
+  ${MediumScreen({ marginTop: "3.8rem" })}
 `;
 
 const Details = styled.div`
@@ -29,12 +36,11 @@ const Details = styled.div`
 
 const Row = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100px;
+  justify-content: space-around;
+  width: 200px;
   flex-wrap: wrap;
-  background-color: ${(props) => props.theme.primary};
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 10px 5px;
   color: ${(props) => props.theme.secondary};
   margin: 5px;
@@ -52,23 +58,23 @@ const Info = ({ garage }) => {
       <SecondaryHeading
         text={garage.garageName}
         fontSize="32px"
-        theme={myTheme.primary}
+        theme={myTheme.secondary}
       />
       <Details>
         <Row>
-          <QuarternHeading text="Garage Phone:" />
+          <FontAwesomeIcon icon={faPhone} />
           <Sentence text={garage.garagePhoneNumber} />
         </Row>
         <Row>
-          <QuarternHeading text="Garage Available:" />
+          <FontAwesomeIcon icon={faBriefcase} />
           <Sentence text={garage.availability ? "Open now" : "Closed"} />
         </Row>
         <Row>
-          <QuarternHeading text="Car Type:" />
+          <FontAwesomeIcon icon={faCar} />
           <Sentence text={garage.carType} />
         </Row>
         <Row>
-          <QuarternHeading text="Opening time:" />
+          <FontAwesomeIcon icon={faClock} />
           <Sentence
             text={`${garage.garageStartTime} - ${garage.garageEndTime}`}
           />
