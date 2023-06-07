@@ -4,14 +4,22 @@ import { axiosInstance } from "../../../globals/axiosInstance";
 import InfoItem from "./InfoItem/InfoItem";
 import Sentence from "../../UI/Sentence/Sentence";
 import { Landscape } from "../../../globals/responsive";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faPhone,
+  faSignature,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
-  background-color: ${(props) => props.theme.primary};
-  padding: 10px;
+  border-left: 3px solid ${(props) => props.theme.primary};
+  border-right: 3px solid ${(props) => props.theme.primary};
+  padding: 1.8rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1.8rem;
 
   ${Landscape({ marginTop: "30px" })}
 `;
@@ -40,15 +48,15 @@ const DriverInfo = ({ driverId }) => {
 
   const data = [
     {
-      key: "Name",
+      icon: faSignature,
       value: driverName,
     },
     {
-      key: "Email",
+      icon: faEnvelope,
       value: driverEmail,
     },
     {
-      key: "Phone number",
+      icon: faPhone,
       value: driverPhone,
     },
   ];
@@ -56,10 +64,10 @@ const DriverInfo = ({ driverId }) => {
   return (
     <Container>
       <Contents>
-        {data.map(({ key, value }, index) => (
+        {data.map(({ icon, value }, index) => (
           <InfoItem key={index}>
-            <Sentence text={`${key}:`} margin="0 10px 0 0" />
-            <Sentence text={value} />
+            <FontAwesomeIcon icon={icon} />
+            <Sentence text={value} margin="0 0 0 1.2rem" />
           </InfoItem>
         ))}
       </Contents>
