@@ -8,9 +8,7 @@ const ProfilePage = () => {
   return (
     <>
       <Header />
-      <HeroBackground backgroundImg="/images/Slider/slider-img-1.jpg">
-        <DriverProfile />
-      </HeroBackground>
+      <DriverProfile />
       <Footer />
     </>
   );
